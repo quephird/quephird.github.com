@@ -33,6 +33,47 @@
 
 body {
     background-color: black;
+    text-align: center;
+    width: 100%;
+
+    /* This is to prevent the vertical scrollbar from appearing to expose
+       the bottom of the signPost div. */
+    overflow-y: hidden;
+}
+
+/* 
+    This is needed to insure that the click areas of the icons 
+    are not partially obscured by the arrow glyphs.
+*/
+img {
+   position: relative;
+}
+
+.signPost {
+    -moz-border-radius: 50px;
+    background-color: black;
+    border-color: silver;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 100px;
+    width: 1000px;
+
+    /* This is to extend the bottom of the div beyond the end of the page */
+    height: 100%;
+}
+
+.signGroup {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+    top: 200px;
+    width: 1000px;
+    z-index: 2;
 }
 
 .sign {
@@ -42,9 +83,10 @@ body {
     border-radius: 15px;
     border-style: solid;
     border-width: 5px;
-    float: left;
+    display: inline-block;
     margin:0 10px 10px 0;
     text-align: center;
+    top: -50px;
     width: 200px;
 }
 
@@ -62,3 +104,4 @@ body {
     margin-top: -50px;
     margin-bottom: 10px;
 }
+
