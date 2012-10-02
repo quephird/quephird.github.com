@@ -33,7 +33,6 @@
 
 body {
     background-color: black;
-    text-align: center;
     width: 100%;
 
     /* This is to prevent the vertical scrollbar from appearing to expose
@@ -49,9 +48,23 @@ img {
    position: relative;
 }
 
+.sky {
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(top, #00A3EF 0%, #ff4500 100%);
+    /* Opera */ 
+    background-image: -o-linear-gradient(top, #00A3EF 0%, #ff4500 100%);
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(top, #00A3EF 0%, #ff4500 100%);
+    height: 50%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
 .signPost {
     -moz-border-radius: 50px;
-    background-color: black;
+    background-color: transparent;
     border-color: silver;
     border-radius: 50px;
     border-style: solid;
@@ -63,12 +76,12 @@ img {
     width: 1000px;
 
     /* This is to extend the bottom of the div beyond the end of the page */
-    height: 100%;
+    height: 1000px;
 }
 
 .signGroup {
-    margin-left: auto;
-    margin-right: auto;
+    display: block;
+    margin: 0 auto;
     position: relative;
     text-align: center;
     top: 200px;
