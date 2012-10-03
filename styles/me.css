@@ -32,7 +32,6 @@
 }
 
 body {
-    background-color: black;
     width: 100%;
 
     /* This is to prevent the vertical scrollbar from appearing to expose
@@ -55,11 +54,81 @@ img {
     background-image: -o-linear-gradient(top, #00A3EF 0%, #ff4500 100%);
     /* Webkit (Chrome 11+) */ 
     background-image: -webkit-linear-gradient(top, #00A3EF 0%, #ff4500 100%);
-    height: 50%;
+    height: 500px;
     left: 0px;
     position: absolute;
     top: 0px;
     width: 100%;
+}
+
+.ground {
+    background-color: #004000;
+    height: 500px;
+    left: 0px;
+    position: absolute;
+    text-align: center;
+    top: 500px;
+    width: 100%;
+}
+    
+.leftGrass {
+    border-color: #000000 #000000 #000000 #004000;
+    border-style: solid;
+    border-width: 0px 0px 400px 400px;
+    display: inline-block;
+    height: 0px;
+    line-height: 0px;
+    top: 0px;
+    width: 0px;
+}
+
+.leftCenterLine {
+    border-color: #000000 #000000 #ffff00 #000000;
+    border-style: solid;
+    border-width: 0px 0px 400px 20px;
+    display: inline-block;
+    height: 0px;
+    line-height: 0px;
+    top: 0px;
+    width: 0px;
+}
+
+.road {
+    background-color: black;
+    display: inline-block;
+    height: 400px;
+    top: 0px;
+    width: 100px;
+}
+
+.gap {
+    background-color: black;
+    display: inline-block;
+    height: 400px;
+    top: 0px;
+    width: 10px;
+}
+
+.rightGrass {
+    border-color: #000000 #004000 #000000 #000000;
+    border-style: solid;
+    border-width: 0px 400px 400px 0px;
+    display: inline-block;
+    height: 0px;
+    line-height: 0px;
+    top: 0px;
+    width: 0px;
+}
+
+.rightCenterLine {
+    border-color: #000000 #000000 #ffff00 #000000;
+    border-style: solid;
+    border-width: 0px 20px 400px 0px;
+    display: inline-block;
+    height: 0px;
+    line-height: 0px;
+    top: 0px;
+    width: 0px;
 }
 
 .signPost {
