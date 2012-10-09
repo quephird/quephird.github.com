@@ -65,6 +65,7 @@ img {
     background-color: #004000;
     height: 500px;
     left: 0px;
+    min-width: 1100px;
     position: absolute;
     text-align: center;
     top: 500px;
