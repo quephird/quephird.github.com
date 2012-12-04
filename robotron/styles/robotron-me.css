@@ -1,0 +1,435 @@
+@font-face {
+    font-family: 'Robotron-2084';
+    src: url('./../fonts/robotron_2084.eot');
+    src: url('./../fonts/robotron_2084.eot?#iefix') format('embedded-opentype'),
+         url('./../fonts/robotron_2084.woff') format('woff'),
+         url('./../fonts/robotron_2084.ttf') format('truetype'),
+         url('./../fonts/robotron_2084.svg#robotron_2084') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Robotron-2084-Small';
+    src: url('./../fonts/robotron_2084_small.eot');
+    src: url('./../fonts/robotron_2084_small.eot?#iefix') format('embedded-opentype'),
+         url('./../fonts/robotron_2084_small.woff') format('woff'),
+         url('./../fonts/robotron_2084_small.ttf') format('truetype'),
+         url('./../fonts/robotron_2084_small.svg#robotron_2084_small') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@-moz-keyframes cycleAllColors {
+    0%   {color: red;}
+    14%  {color: yellow;}
+    28%  {color: blue;}
+    43%  {color: green;}
+    57%  {color: orange;}
+    71%  {color: magenta;}
+    86%  {color: white;}
+}
+@-webkit-keyframes cycleAllColors {
+    0%   {color: red;}
+    14%  {color: yellow;}
+    28%  {color: blue;}
+    43%  {color: green;}
+    57%  {color: orange;}
+    71%  {color: magenta;}
+    86%  {color: white;}
+}
+
+@-webkit-keyframes orangeAndWhite {
+    0%   {color: orange;}
+    99%  {color: white;}
+    100%   {color: orange;}
+}
+
+@-webkit-keyframes blueAndWhite {
+    0%   {color: blue;}
+    50%  {color: white;}
+    51%  {color: blue;}
+    100%  {color: blue;}
+}
+
+body {
+    background-color: #000000;
+    width: 100%;
+}
+
+.content {
+    left: 140px;
+    position: absolute;
+    top: 125px;
+    width: 900px;
+}    
+
+.me {
+    /* Firefox */
+    -moz-animation-name: cycleAllColors;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite; 
+    -webkit-animation-name: cycleAllColors;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    font-family: 'Robotron-2084';
+    font-size: 60pt;
+    text-align: center;
+    text-shadow: 0 -3px yellow, 3px 0 yellow, 0 3px yellow, -3px 0 yellow;
+}
+
+.year {
+    text-align: center;
+}
+
+.presentedBy {
+    -moz-animation-name: orangeAndWhite;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite; 
+    -webkit-animation-name: orangeAndWhite;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    font-family: 'Robotron-2084';
+    font-size: 18pt;
+    text-align: center;
+}
+
+.credits {
+    -moz-animation-name: blueAndWhite;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite; 
+    -webkit-animation-name: blueAndWhite;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    font-family: 'Robotron-2084';
+    font-size: 18pt;
+    text-align: center;
+}
+
+.designedBy {
+    -moz-animation-name: orangeAndWhite;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite; 
+    -webkit-animation-name: orangeAndWhite;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    font-family: 'Robotron-2084-Small';
+    font-size: 18pt;
+    text-align: center;
+}
+
+.copyright {
+    /* Firefox */
+    -moz-animation-name: cycleAllColors;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite; 
+    /* Safari and Chrome */
+    -webkit-animation-name: cycleAllColors;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    color: DarkSlateBlue;
+    font-family: 'Robotron-2084-Small';
+    font-size: 18pt;
+    text-align: center;
+}
+
+@-webkit-keyframes moveLinkedIn1 {
+    0% { -webkit-transform: translateX(0px) translateY(0px); }
+    30%   { -webkit-transform: translateX(1000px) translateY(0px); }
+    50%   { -webkit-transform: translateX(1000px) translateY(600px); }
+    80%   { -webkit-transform: translateX(0px) translateY(600px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.linkedIn1 {
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    -webkit-animation: moveLinkedIn1 10s linear infinite;
+}
+
+@-webkit-keyframes moveTwitter1 {
+    0% { -webkit-transform: translateX(0px) translateY(0px); }
+    25%   { -webkit-transform: translateX(850px) translateY(0px); }
+    45%   { -webkit-transform: translateX(850px) translateY(600px); }
+    75%   { -webkit-transform: translateX(-150px) translateY(600px); }
+    95% { -webkit-transform: translateX(-150px) translateY(0px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.twitter1 {
+    left: 150px;
+    position: absolute;
+    top: 0px;
+    -webkit-animation: moveTwitter1 10s linear infinite;
+}
+
+@-webkit-keyframes moveDeviantArt1 {
+    0% { -webkit-transform: translateX(0px) translateY(0px); }
+    20%   { -webkit-transform: translateX(700px) translateY(0px); }
+    40%   { -webkit-transform: translateX(700px) translateY(600px); }
+    70%   { -webkit-transform: translateX(-300px) translateY(600px); }
+    90% { -webkit-transform: translateX(-300px) translateY(0px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.deviantArt1 {
+    left: 300px;
+    position: absolute;
+    top: 0px;
+    -webkit-animation: moveDeviantArt1 10s linear infinite;
+}
+
+@-webkit-keyframes moveSoundCloud1 {
+    0% { -webkit-transform: translateX(0px) translateY(0px); }
+    15%   { -webkit-transform: translateX(550px) translateY(0px); }
+    35%   { -webkit-transform: translateX(550px) translateY(600px); }
+    65%   { -webkit-transform: translateX(-450px) translateY(600px); }
+    85% { -webkit-transform: translateX(-450px) translateY(0px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.soundCloud1 {
+    left: 450px;
+    position: absolute;
+    top: 0px;
+    -webkit-animation: moveSoundCloud1 10s linear infinite;
+}
+
+@-webkit-keyframes moveGithub1 {
+    0% { -webkit-transform: translateX(0px) translateY(0px); }
+    10%   { -webkit-transform: translateX(400px) translateY(0px); }
+    30%   { -webkit-transform: translateX(400px) translateY(600px); }
+    60%   { -webkit-transform: translateX(-600px) translateY(600px); }
+    80% { -webkit-transform: translateX(-600px) translateY(0px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.github1 {
+    left: 600px;
+    position: absolute;
+    top: 0px;
+    -webkit-animation: moveGithub1 10s linear infinite;
+}
+
+@-webkit-keyframes moveLinkedIn2 {
+    0% { -webkit-transform: translateX(0px) translateY(0px); }
+    5%   { -webkit-transform: translateX(250px) translateY(0px); }
+    25%   { -webkit-transform: translateX(250px) translateY(600px); }
+    55%   { -webkit-transform: translateX(-750px) translateY(600px); }
+    75% { -webkit-transform: translateX(-750px) translateY(0px); }
+    100% { -webkit-transform: translateX(75px) translateY(0px); }
+}
+.linkedIn2 {
+    left: 750px;
+    position: absolute;
+    top: 0px;
+    -webkit-animation: moveLinkedIn2 10s linear infinite;
+}
+
+@-webkit-keyframes moveTwitter2 {
+    0%   { -webkit-transform: translateX(100px) translateY(0px); }
+    20%   { -webkit-transform: translateX(100px) translateY(600px); }
+    50%   { -webkit-transform: translateX(-900px) translateY(600px); }
+    70% { -webkit-transform: translateX(-900px) translateY(0px); }
+    100% { -webkit-transform: translateX(100px) translateY(0px); }
+}
+.twitter2 {
+    left: 900px;
+    position: absolute;
+    top: 0px;
+    -webkit-animation: moveTwitter2 10s linear infinite;
+}
+
+@-webkit-keyframes moveDeviantArt2 {
+    0%   { -webkit-transform: translateX(0px) translateY(100px); }
+    15%   { -webkit-transform: translateX(0px) translateY(550px); }
+    45%   { -webkit-transform: translateX(-1000px) translateY(550px); }
+    65% { -webkit-transform: translateX(-1000px) translateY(-50px); }
+    95% { -webkit-transform: translateX(0px) translateY(-50px); }
+    100% { -webkit-transform: translateX(0px) translateY(100px); }
+}
+.deviantArt2 {
+    left: 1000px;
+    position: absolute;
+    top: 50px;
+    -webkit-animation: moveDeviantArt2 10s linear infinite;
+}
+
+@-webkit-keyframes moveSoundCloud2 {
+    0%   { -webkit-transform: translateX(0px) translateY(100px); }
+    10%   { -webkit-transform: translateX(0px) translateY(400px); }
+    40%   { -webkit-transform: translateX(-1000px) translateY(400px); }
+    60% { -webkit-transform: translateX(-1000px) translateY(-200px); }
+    90% { -webkit-transform: translateX(0px) translateY(-200px); }
+    100% { -webkit-transform: translateX(0px) translateY(100px); }
+}
+.soundCloud2 {
+    left: 1000px;
+    position: absolute;
+    top: 200px;
+    -webkit-animation: moveSoundCloud2 10s linear infinite;
+}
+
+@-webkit-keyframes moveGithub2 {
+    0%   { -webkit-transform: translateX(0px) translateY(100px); }
+    5%   { -webkit-transform: translateX(0px) translateY(250px); }
+    35%   { -webkit-transform: translateX(-1000px) translateY(250px); }
+    55% { -webkit-transform: translateX(-1000px) translateY(-350px); }
+    85% { -webkit-transform: translateX(0px) translateY(-350px); }
+    100% { -webkit-transform: translateX(0px) translateY(100px); }
+}
+.github2 {
+    left: 1000px;
+    position: absolute;
+    top: 350px;
+    -webkit-animation: moveGithub2 10s linear infinite;
+}
+
+@-webkit-keyframes moveLinkedIn3 {
+    0%   { -webkit-transform: translateX(0px) translateY(100px); }
+    30%   { -webkit-transform: translateX(-1000px) translateY(100px); }
+    50%   { -webkit-transform: translateX(-1000px) translateY(-500px); }
+    80% { -webkit-transform: translateX(0px) translateY(-500px); }
+    100% { -webkit-transform: translateX(0px) translateY(100px); }
+}
+.linkedIn3 {
+    left: 1000px;
+    position: absolute;
+    top: 500px;
+    -webkit-animation: moveLinkedIn3 10s linear infinite;
+}
+
+@-webkit-keyframes moveTwitter3 {
+    25%   { -webkit-transform: translateX(-850px) translateY(0px); }
+    45%   { -webkit-transform: translateX(-850px) translateY(-600px); }
+    75% { -webkit-transform: translateX(150px) translateY(-600px); }
+    95% { -webkit-transform: translateX(150px) translateY(0px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.twitter3 {
+    left: 850px;
+    position: absolute;
+    top: 600px;
+    -webkit-animation: moveTwitter3 10s linear infinite;
+}
+
+@-webkit-keyframes moveDeviantArt3 {
+    20%   { -webkit-transform: translateX(-700px) translateY(0px); }
+    40%   { -webkit-transform: translateX(-700px) translateY(-600px); }
+    70% { -webkit-transform: translateX(300px) translateY(-600px); }
+    90% { -webkit-transform: translateX(300px) translateY(0px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.deviantArt3 {
+    left: 700px;
+    position: absolute;
+    top: 600px;
+    -webkit-animation: moveDeviantArt3 10s linear infinite;
+}
+
+@-webkit-keyframes moveSoundCloud3 {
+    15%   { -webkit-transform: translateX(-550px) translateY(0px); }
+    35%   { -webkit-transform: translateX(-550px) translateY(-600px); }
+    65% { -webkit-transform: translateX(450px) translateY(-600px); }
+    85% { -webkit-transform: translateX(450px) translateY(0px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.soundCloud3 {
+    left: 550px;
+    position: absolute;
+    top: 600px;
+    -webkit-animation: moveSoundCloud3 10s linear infinite;
+}
+
+@-webkit-keyframes moveGithub3 {
+    10%   { -webkit-transform: translateX(-400px) translateY(0px); }
+    30%   { -webkit-transform: translateX(-400px) translateY(-600px); }
+    60% { -webkit-transform: translateX(600px) translateY(-600px); }
+    80% { -webkit-transform: translateX(600px) translateY(0px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.github3 {
+    left: 400px;
+    position: absolute;
+    top: 600px;
+    -webkit-animation: moveGithub3 10s linear infinite;
+}
+
+@-webkit-keyframes moveLinkedIn4 {
+    0%   { -webkit-transform: translateX(0px) translateY(0px); }
+    5%   { -webkit-transform: translateX(-250px) translateY(0px); }
+    25%   { -webkit-transform: translateX(-250px) translateY(-600px); }
+    55% { -webkit-transform: translateX(750px) translateY(-600px); }
+    75% { -webkit-transform: translateX(750px) translateY(0px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.linkedIn4 {
+    left: 250px;
+    position: absolute;
+    top: 600px;
+    -webkit-animation: moveLinkedIn4 10s linear infinite;
+}
+
+@-webkit-keyframes moveTwitter4 {
+    0%   { -webkit-transform: translateX(-100px) translateY(0px); }
+    20%   { -webkit-transform: translateX(-100px) translateY(-600px); }
+    50% { -webkit-transform: translateX(900px) translateY(-600px); }
+    70% { -webkit-transform: translateX(900px) translateY(0px); }
+    90% { -webkit-transform: translateX(250px) translateY(0px); }
+    100% { -webkit-transform: translateX(-100px) translateY(0px); }
+}
+.twitter4 {
+    left: 100px;
+    position: absolute;
+    top: 600px;
+    -webkit-animation: moveTwitter4 10s linear infinite;
+}
+
+@-webkit-keyframes moveDeviantArt4 {
+    15%   { -webkit-transform: translateX(0px) translateY(-450px); }
+    45% { -webkit-transform: translateX(1000px) translateY(-450px); }
+    65% { -webkit-transform: translateX(1000px) translateY(150px); }
+    95% { -webkit-transform: translateX(0px) translateY(150px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.deviantArt4 {
+    left: 0px;
+    position: absolute;
+    top: 450px;
+    -webkit-animation: moveDeviantArt4 10s linear infinite;
+}
+
+@-webkit-keyframes moveSoundCloud4 {
+    10%   { -webkit-transform: translateX(0px) translateY(-300px); }
+    40% { -webkit-transform: translateX(1000px) translateY(-300px); }
+    60% { -webkit-transform: translateX(1000px) translateY(300px); }
+    90% { -webkit-transform: translateX(0px) translateY(300px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.soundCloud4 {
+    left: 0px;
+    position: absolute;
+    top: 300px;
+    -webkit-animation: moveSoundCloud4 10s linear infinite;
+}
+
+@-webkit-keyframes moveGithub4 {
+    5%   { -webkit-transform: translateX(0px) translateY(-150px); }
+    35% { -webkit-transform: translateX(1000px) translateY(-150px); }
+    55% { -webkit-transform: translateX(1000px) translateY(450px); }
+    85% { -webkit-transform: translateX(0px) translateY(450px); }
+    100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+.github4 {
+    left: 0px;
+    position: absolute;
+    top: 150px;
+    -webkit-animation: moveGithub4 10s linear infinite;
+}
+
