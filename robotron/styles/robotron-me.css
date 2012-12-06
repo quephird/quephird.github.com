@@ -38,14 +38,39 @@
     71%  {color: magenta;}
     86%  {color: white;}
 }
+@-o-keyframes cycleAllColors {
+    0%   {color: red;}
+    14%  {color: yellow;}
+    28%  {color: blue;}
+    43%  {color: green;}
+    57%  {color: orange;}
+    71%  {color: magenta;}
+    86%  {color: white;}
+}
 
 @-webkit-keyframes orangeAndWhite {
     0%   {color: orange;}
     99%  {color: white;}
     100%   {color: orange;}
 }
+@-moz-keyframes orangeAndWhite {
+    0%   {color: orange;}
+    99%  {color: white;}
+    100%   {color: orange;}
+}
+@-o-keyframes orangeAndWhite {
+    0%   {color: orange;}
+    99%  {color: white;}
+    100%   {color: orange;}
+}
 
 @-webkit-keyframes blueAndWhite {
+    0%   {color: blue;}
+    50%  {color: white;}
+    51%  {color: blue;}
+    100%  {color: blue;}
+}
+@-moz-keyframes blueAndWhite {
     0%   {color: blue;}
     50%  {color: white;}
     51%  {color: blue;}
@@ -65,7 +90,6 @@ body {
 }    
 
 .me {
-    /* Firefox */
     -moz-animation-name: cycleAllColors;
     -moz-animation-duration: 0.5s;
     -moz-animation-timing-function: linear;
@@ -74,6 +98,14 @@ body {
     -webkit-animation-duration: 0.5s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
+    -o-animation-name: cycleAllColors;
+    -o-animation-duration: 0.5s;
+    -o-animation-timing-function: linear;
+    -o-animation-iteration-count: infinite;
+    animation-name: cycleAllColors;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     font-family: 'Robotron-2084';
     font-size: 60pt;
     text-align: center;
@@ -93,6 +125,10 @@ body {
     -webkit-animation-duration: 0.5s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
+    -o-animation-name: orangeAndWhite;
+    -o-animation-duration: 0.5s;
+    -o-animation-timing-function: linear;
+    -o-animation-iteration-count: infinite;
     font-family: 'Robotron-2084';
     font-size: 18pt;
     text-align: center;
@@ -158,12 +194,12 @@ body {
 }
 
 @-webkit-keyframes moveTwitter1 {
-    0% { -webkit-transform: translateX(0px) translateY(0px); }
+    0% { -webkit-transform: translateX(15px) translateY(0px); }
     25%   { -webkit-transform: translateX(850px) translateY(0px); }
     45%   { -webkit-transform: translateX(850px) translateY(600px); }
     75%   { -webkit-transform: translateX(-150px) translateY(600px); }
     95% { -webkit-transform: translateX(-150px) translateY(0px); }
-    100% { -webkit-transform: translateX(0px) translateY(0px); }
+    100% { -webkit-transform: translateX(15px) translateY(0px); }
 }
 .twitter1 {
     left: 150px;
@@ -173,12 +209,12 @@ body {
 }
 
 @-webkit-keyframes moveDeviantArt1 {
-    0% { -webkit-transform: translateX(0px) translateY(0px); }
+    0% { -webkit-transform: translateX(30px) translateY(0px); }
     20%   { -webkit-transform: translateX(700px) translateY(0px); }
     40%   { -webkit-transform: translateX(700px) translateY(600px); }
     70%   { -webkit-transform: translateX(-300px) translateY(600px); }
     90% { -webkit-transform: translateX(-300px) translateY(0px); }
-    100% { -webkit-transform: translateX(0px) translateY(0px); }
+    100% { -webkit-transform: translateX(30px) translateY(0px); }
 }
 .deviantArt1 {
     left: 300px;
@@ -188,12 +224,12 @@ body {
 }
 
 @-webkit-keyframes moveSoundCloud1 {
-    0% { -webkit-transform: translateX(0px) translateY(0px); }
+    0% { -webkit-transform: translateX(45px) translateY(0px); }
     15%   { -webkit-transform: translateX(550px) translateY(0px); }
     35%   { -webkit-transform: translateX(550px) translateY(600px); }
     65%   { -webkit-transform: translateX(-450px) translateY(600px); }
     85% { -webkit-transform: translateX(-450px) translateY(0px); }
-    100% { -webkit-transform: translateX(0px) translateY(0px); }
+    100% { -webkit-transform: translateX(45px) translateY(0px); }
 }
 .soundCloud1 {
     left: 450px;
@@ -203,12 +239,12 @@ body {
 }
 
 @-webkit-keyframes moveGithub1 {
-    0% { -webkit-transform: translateX(0px) translateY(0px); }
+    0% { -webkit-transform: translateX(60px) translateY(0px); }
     10%   { -webkit-transform: translateX(400px) translateY(0px); }
     30%   { -webkit-transform: translateX(400px) translateY(600px); }
     60%   { -webkit-transform: translateX(-600px) translateY(600px); }
     80% { -webkit-transform: translateX(-600px) translateY(0px); }
-    100% { -webkit-transform: translateX(0px) translateY(0px); }
+    100% { -webkit-transform: translateX(60px) translateY(0px); }
 }
 .github1 {
     left: 600px;
@@ -218,7 +254,7 @@ body {
 }
 
 @-webkit-keyframes moveLinkedIn2 {
-    0% { -webkit-transform: translateX(0px) translateY(0px); }
+    0% { -webkit-transform: translateX(75px) translateY(0px); }
     5%   { -webkit-transform: translateX(250px) translateY(0px); }
     25%   { -webkit-transform: translateX(250px) translateY(600px); }
     55%   { -webkit-transform: translateX(-750px) translateY(600px); }
@@ -320,11 +356,12 @@ body {
 }
 
 @-webkit-keyframes moveDeviantArt3 {
+    0%   { -webkit-transform: translateX(-15px) translateY(0px); }
     20%   { -webkit-transform: translateX(-700px) translateY(0px); }
     40%   { -webkit-transform: translateX(-700px) translateY(-600px); }
     70% { -webkit-transform: translateX(300px) translateY(-600px); }
     90% { -webkit-transform: translateX(300px) translateY(0px); }
-    100% { -webkit-transform: translateX(0px) translateY(0px); }
+    100% { -webkit-transform: translateX(-15px) translateY(0px); }
 }
 .deviantArt3 {
     left: 700px;
@@ -334,11 +371,12 @@ body {
 }
 
 @-webkit-keyframes moveSoundCloud3 {
+    0%   { -webkit-transform: translateX(-30px) translateY(0px); }
     15%   { -webkit-transform: translateX(-550px) translateY(0px); }
     35%   { -webkit-transform: translateX(-550px) translateY(-600px); }
     65% { -webkit-transform: translateX(450px) translateY(-600px); }
     85% { -webkit-transform: translateX(450px) translateY(0px); }
-    100% { -webkit-transform: translateX(0px) translateY(0px); }
+    100% { -webkit-transform: translateX(-30px) translateY(0px); }
 }
 .soundCloud3 {
     left: 550px;
@@ -348,11 +386,12 @@ body {
 }
 
 @-webkit-keyframes moveGithub3 {
+    0%   { -webkit-transform: translateX(-45px) translateY(0px); }
     10%   { -webkit-transform: translateX(-400px) translateY(0px); }
     30%   { -webkit-transform: translateX(-400px) translateY(-600px); }
     60% { -webkit-transform: translateX(600px) translateY(-600px); }
     80% { -webkit-transform: translateX(600px) translateY(0px); }
-    100% { -webkit-transform: translateX(0px) translateY(0px); }
+    100% { -webkit-transform: translateX(-45px) translateY(0px); }
 }
 .github3 {
     left: 400px;
@@ -362,12 +401,12 @@ body {
 }
 
 @-webkit-keyframes moveLinkedIn4 {
-    0%   { -webkit-transform: translateX(0px) translateY(0px); }
+    0%   { -webkit-transform: translateX(-60px) translateY(0px); }
     5%   { -webkit-transform: translateX(-250px) translateY(0px); }
     25%   { -webkit-transform: translateX(-250px) translateY(-600px); }
     55% { -webkit-transform: translateX(750px) translateY(-600px); }
     75% { -webkit-transform: translateX(750px) translateY(0px); }
-    100% { -webkit-transform: translateX(0px) translateY(0px); }
+    100% { -webkit-transform: translateX(-60px) translateY(0px); }
 }
 .linkedIn4 {
     left: 250px;
@@ -381,7 +420,6 @@ body {
     20%   { -webkit-transform: translateX(-100px) translateY(-600px); }
     50% { -webkit-transform: translateX(900px) translateY(-600px); }
     70% { -webkit-transform: translateX(900px) translateY(0px); }
-    90% { -webkit-transform: translateX(250px) translateY(0px); }
     100% { -webkit-transform: translateX(-100px) translateY(0px); }
 }
 .twitter4 {
@@ -426,10 +464,18 @@ body {
     85% { -webkit-transform: translateX(0px) translateY(450px); }
     100% { -webkit-transform: translateX(0px) translateY(0px); }
 }
+@-moz-keyframes moveGithub4 {
+    5%   { -moz-transform: translateX(0px) translateY(-150px); }
+    35% { -moz-transform: translateX(1000px) translateY(-150px); }
+    55% { -moz-transform: translateX(1000px) translateY(450px); }
+    85% { -moz-transform: translateX(0px) translateY(450px); }
+    100% { -moz-transform: translateX(0px) translateY(0px); }
+}
 .github4 {
     left: 0px;
     position: absolute;
     top: 150px;
     -webkit-animation: moveGithub4 10s linear infinite;
+    -moz-animation: moveGithub4 10s linear infinite;
 }
 
