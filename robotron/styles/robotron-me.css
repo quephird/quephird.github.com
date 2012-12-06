@@ -186,11 +186,19 @@ body {
     80%   { -webkit-transform: translateX(0px) translateY(600px); }
     100% { -webkit-transform: translateX(0px) translateY(0px); }
 }
+@-moz-keyframes moveLinkedIn1 {
+    0% { -moz-transform: translateX(0px) translateY(0px); }
+    30%   { -moz-transform: translateX(1000px) translateY(0px); }
+    50%   { -moz-transform: translateX(1000px) translateY(600px); }
+    80%   { -moz-transform: translateX(0px) translateY(600px); }
+    100% { -moz-transform: translateX(0px) translateY(0px); }
+}
 .linkedIn1 {
     left: 0px;
     position: absolute;
     top: 0px;
     -webkit-animation: moveLinkedIn1 10s linear infinite;
+    -moz-animation: moveLinkedIn1 10s linear infinite;
 }
 
 @-webkit-keyframes moveTwitter1 {
@@ -201,11 +209,20 @@ body {
     95% { -webkit-transform: translateX(-150px) translateY(0px); }
     100% { -webkit-transform: translateX(15px) translateY(0px); }
 }
+@-moz-keyframes moveTwitter1 {
+    0% { -moz-transform: translateX(15px) translateY(0px); }
+    25%   { -moz-transform: translateX(850px) translateY(0px); }
+    45%   { -moz-transform: translateX(850px) translateY(600px); }
+    75%   { -moz-transform: translateX(-150px) translateY(600px); }
+    95% { -moz-transform: translateX(-150px) translateY(0px); }
+    100% { -moz-transform: translateX(15px) translateY(0px); }
+}
 .twitter1 {
     left: 150px;
     position: absolute;
     top: 0px;
     -webkit-animation: moveTwitter1 10s linear infinite;
+    -moz-animation: moveTwitter1 10s linear infinite;
 }
 
 @-webkit-keyframes moveDeviantArt1 {
@@ -216,11 +233,20 @@ body {
     90% { -webkit-transform: translateX(-300px) translateY(0px); }
     100% { -webkit-transform: translateX(30px) translateY(0px); }
 }
+@-moz-keyframes moveDeviantArt1 {
+    0% { -moz-transform: translateX(30px) translateY(0px); }
+    20%   { -moz-transform: translateX(700px) translateY(0px); }
+    40%   { -moz-transform: translateX(700px) translateY(600px); }
+    70%   { -moz-transform: translateX(-300px) translateY(600px); }
+    90% { -moz-transform: translateX(-300px) translateY(0px); }
+    100% { -moz-transform: translateX(30px) translateY(0px); }
+}
 .deviantArt1 {
     left: 300px;
     position: absolute;
     top: 0px;
     -webkit-animation: moveDeviantArt1 10s linear infinite;
+    -moz-animation: moveDeviantArt1 10s linear infinite;
 }
 
 @-webkit-keyframes moveSoundCloud1 {
@@ -231,11 +257,20 @@ body {
     85% { -webkit-transform: translateX(-450px) translateY(0px); }
     100% { -webkit-transform: translateX(45px) translateY(0px); }
 }
+@-moz-keyframes moveSoundCloud1 {
+    0% { -moz-transform: translateX(45px) translateY(0px); }
+    15%   { -moz-transform: translateX(550px) translateY(0px); }
+    35%   { -moz-transform: translateX(550px) translateY(600px); }
+    65%   { -moz-transform: translateX(-450px) translateY(600px); }
+    85% { -moz-transform: translateX(-450px) translateY(0px); }
+    100% { -moz-transform: translateX(45px) translateY(0px); }
+}
 .soundCloud1 {
     left: 450px;
     position: absolute;
     top: 0px;
     -webkit-animation: moveSoundCloud1 10s linear infinite;
+    -moz-animation: moveSoundCloud1 10s linear infinite;
 }
 
 @-webkit-keyframes moveGithub1 {
@@ -246,11 +281,20 @@ body {
     80% { -webkit-transform: translateX(-600px) translateY(0px); }
     100% { -webkit-transform: translateX(60px) translateY(0px); }
 }
+@-moz-keyframes moveGithub1 {
+    0% { -moz-transform: translateX(60px) translateY(0px); }
+    10%   { -moz-transform: translateX(400px) translateY(0px); }
+    30%   { -moz-transform: translateX(400px) translateY(600px); }
+    60%   { -moz-transform: translateX(-600px) translateY(600px); }
+    80% { -moz-transform: translateX(-600px) translateY(0px); }
+    100% { -moz-transform: translateX(60px) translateY(0px); }
+}
 .github1 {
     left: 600px;
     position: absolute;
     top: 0px;
     -webkit-animation: moveGithub1 10s linear infinite;
+    -moz-animation: moveGithub1 10s linear infinite;
 }
 
 @-webkit-keyframes moveLinkedIn2 {
@@ -261,11 +305,20 @@ body {
     75% { -webkit-transform: translateX(-750px) translateY(0px); }
     100% { -webkit-transform: translateX(75px) translateY(0px); }
 }
+@-moz-keyframes moveLinkedIn2 {
+    0% { -moz-transform: translateX(75px) translateY(0px); }
+    5%   { -moz-transform: translateX(250px) translateY(0px); }
+    25%   { -moz-transform: translateX(250px) translateY(600px); }
+    55%   { -moz-transform: translateX(-750px) translateY(600px); }
+    75% { -moz-transform: translateX(-750px) translateY(0px); }
+    100% { -moz-transform: translateX(75px) translateY(0px); }
+}
 .linkedIn2 {
     left: 750px;
     position: absolute;
     top: 0px;
     -webkit-animation: moveLinkedIn2 10s linear infinite;
+    -moz-animation: moveLinkedIn2 10s linear infinite;
 }
 
 @-webkit-keyframes moveTwitter2 {
@@ -275,11 +328,19 @@ body {
     70% { -webkit-transform: translateX(-900px) translateY(0px); }
     100% { -webkit-transform: translateX(100px) translateY(0px); }
 }
+@-moz-keyframes moveTwitter2 {
+    0%   { -moz-transform: translateX(100px) translateY(0px); }
+    20%   { -moz-transform: translateX(100px) translateY(600px); }
+    50%   { -moz-transform: translateX(-900px) translateY(600px); }
+    70% { -moz-transform: translateX(-900px) translateY(0px); }
+    100% { -moz-transform: translateX(100px) translateY(0px); }
+}
 .twitter2 {
     left: 900px;
     position: absolute;
     top: 0px;
     -webkit-animation: moveTwitter2 10s linear infinite;
+    -moz-animation: moveTwitter2 10s linear infinite;
 }
 
 @-webkit-keyframes moveDeviantArt2 {
@@ -290,11 +351,20 @@ body {
     95% { -webkit-transform: translateX(0px) translateY(-50px); }
     100% { -webkit-transform: translateX(0px) translateY(100px); }
 }
+@-moz-keyframes moveDeviantArt2 {
+    0%   { -moz-transform: translateX(0px) translateY(100px); }
+    15%   { -moz-transform: translateX(0px) translateY(550px); }
+    45%   { -moz-transform: translateX(-1000px) translateY(550px); }
+    65% { -moz-transform: translateX(-1000px) translateY(-50px); }
+    95% { -moz-transform: translateX(0px) translateY(-50px); }
+    100% { -moz-transform: translateX(0px) translateY(100px); }
+}
 .deviantArt2 {
     left: 1000px;
     position: absolute;
     top: 50px;
     -webkit-animation: moveDeviantArt2 10s linear infinite;
+    -moz-animation: moveDeviantArt2 10s linear infinite;
 }
 
 @-webkit-keyframes moveSoundCloud2 {
@@ -305,11 +375,20 @@ body {
     90% { -webkit-transform: translateX(0px) translateY(-200px); }
     100% { -webkit-transform: translateX(0px) translateY(100px); }
 }
+@-moz-keyframes moveSoundCloud2 {
+    0%   { -moz-transform: translateX(0px) translateY(100px); }
+    10%   { -moz-transform: translateX(0px) translateY(400px); }
+    40%   { -moz-transform: translateX(-1000px) translateY(400px); }
+    60% { -moz-transform: translateX(-1000px) translateY(-200px); }
+    90% { -moz-transform: translateX(0px) translateY(-200px); }
+    100% { -moz-transform: translateX(0px) translateY(100px); }
+}
 .soundCloud2 {
     left: 1000px;
     position: absolute;
     top: 200px;
     -webkit-animation: moveSoundCloud2 10s linear infinite;
+    -moz-animation: moveSoundCloud2 10s linear infinite;
 }
 
 @-webkit-keyframes moveGithub2 {
@@ -320,11 +399,20 @@ body {
     85% { -webkit-transform: translateX(0px) translateY(-350px); }
     100% { -webkit-transform: translateX(0px) translateY(100px); }
 }
+@-moz-keyframes moveGithub2 {
+    0%   { -moz-transform: translateX(0px) translateY(100px); }
+    5%   { -moz-transform: translateX(0px) translateY(250px); }
+    35%   { -moz-transform: translateX(-1000px) translateY(250px); }
+    55% { -moz-transform: translateX(-1000px) translateY(-350px); }
+    85% { -moz-transform: translateX(0px) translateY(-350px); }
+    100% { -moz-transform: translateX(0px) translateY(100px); }
+}
 .github2 {
     left: 1000px;
     position: absolute;
     top: 350px;
     -webkit-animation: moveGithub2 10s linear infinite;
+    -moz-animation: moveGithub2 10s linear infinite;
 }
 
 @-webkit-keyframes moveLinkedIn3 {
@@ -334,11 +422,19 @@ body {
     80% { -webkit-transform: translateX(0px) translateY(-500px); }
     100% { -webkit-transform: translateX(0px) translateY(100px); }
 }
+@-moz-keyframes moveLinkedIn3 {
+    0%   { -moz-transform: translateX(0px) translateY(100px); }
+    30%   { -moz-transform: translateX(-1000px) translateY(100px); }
+    50%   { -moz-transform: translateX(-1000px) translateY(-500px); }
+    80% { -moz-transform: translateX(0px) translateY(-500px); }
+    100% { -moz-transform: translateX(0px) translateY(100px); }
+}
 .linkedIn3 {
     left: 1000px;
     position: absolute;
     top: 500px;
     -webkit-animation: moveLinkedIn3 10s linear infinite;
+    -moz-animation: moveLinkedIn3 10s linear infinite;
 }
 
 @-webkit-keyframes moveTwitter3 {
@@ -348,11 +444,19 @@ body {
     95% { -webkit-transform: translateX(150px) translateY(0px); }
     100% { -webkit-transform: translateX(0px) translateY(0px); }
 }
+@-moz-keyframes moveTwitter3 {
+    25%   { -moz-transform: translateX(-850px) translateY(0px); }
+    45%   { -moz-transform: translateX(-850px) translateY(-600px); }
+    75% { -moz-transform: translateX(150px) translateY(-600px); }
+    95% { -moz-transform: translateX(150px) translateY(0px); }
+    100% { -moz-transform: translateX(0px) translateY(0px); }
+}
 .twitter3 {
     left: 850px;
     position: absolute;
     top: 600px;
     -webkit-animation: moveTwitter3 10s linear infinite;
+    -moz-animation: moveTwitter3 10s linear infinite;
 }
 
 @-webkit-keyframes moveDeviantArt3 {
@@ -363,11 +467,20 @@ body {
     90% { -webkit-transform: translateX(300px) translateY(0px); }
     100% { -webkit-transform: translateX(-15px) translateY(0px); }
 }
+@-moz-keyframes moveDeviantArt3 {
+    0%   { -moz-transform: translateX(-15px) translateY(0px); }
+    20%   { -moz-transform: translateX(-700px) translateY(0px); }
+    40%   { -moz-transform: translateX(-700px) translateY(-600px); }
+    70% { -moz-transform: translateX(300px) translateY(-600px); }
+    90% { -moz-transform: translateX(300px) translateY(0px); }
+    100% { -moz-transform: translateX(-15px) translateY(0px); }
+}
 .deviantArt3 {
     left: 700px;
     position: absolute;
     top: 600px;
     -webkit-animation: moveDeviantArt3 10s linear infinite;
+    -moz-animation: moveDeviantArt3 10s linear infinite;
 }
 
 @-webkit-keyframes moveSoundCloud3 {
@@ -378,11 +491,20 @@ body {
     85% { -webkit-transform: translateX(450px) translateY(0px); }
     100% { -webkit-transform: translateX(-30px) translateY(0px); }
 }
+@-moz-keyframes moveSoundCloud3 {
+    0%   { -moz-transform: translateX(-30px) translateY(0px); }
+    15%   { -moz-transform: translateX(-550px) translateY(0px); }
+    35%   { -moz-transform: translateX(-550px) translateY(-600px); }
+    65% { -moz-transform: translateX(450px) translateY(-600px); }
+    85% { -moz-transform: translateX(450px) translateY(0px); }
+    100% { -moz-transform: translateX(-30px) translateY(0px); }
+}
 .soundCloud3 {
     left: 550px;
     position: absolute;
     top: 600px;
     -webkit-animation: moveSoundCloud3 10s linear infinite;
+    -moz-animation: moveSoundCloud3 10s linear infinite;
 }
 
 @-webkit-keyframes moveGithub3 {
@@ -393,11 +515,20 @@ body {
     80% { -webkit-transform: translateX(600px) translateY(0px); }
     100% { -webkit-transform: translateX(-45px) translateY(0px); }
 }
+@-moz-keyframes moveGithub3 {
+    0%   { -moz-transform: translateX(-45px) translateY(0px); }
+    10%   { -moz-transform: translateX(-400px) translateY(0px); }
+    30%   { -moz-transform: translateX(-400px) translateY(-600px); }
+    60% { -moz-transform: translateX(600px) translateY(-600px); }
+    80% { -moz-transform: translateX(600px) translateY(0px); }
+    100% { -moz-transform: translateX(-45px) translateY(0px); }
+}
 .github3 {
     left: 400px;
     position: absolute;
     top: 600px;
     -webkit-animation: moveGithub3 10s linear infinite;
+    -moz-animation: moveGithub3 10s linear infinite;
 }
 
 @-webkit-keyframes moveLinkedIn4 {
@@ -408,11 +539,20 @@ body {
     75% { -webkit-transform: translateX(750px) translateY(0px); }
     100% { -webkit-transform: translateX(-60px) translateY(0px); }
 }
+@-moz-keyframes moveLinkedIn4 {
+    0%   { -moz-transform: translateX(-60px) translateY(0px); }
+    5%   { -moz-transform: translateX(-250px) translateY(0px); }
+    25%   { -moz-transform: translateX(-250px) translateY(-600px); }
+    55% { -moz-transform: translateX(750px) translateY(-600px); }
+    75% { -moz-transform: translateX(750px) translateY(0px); }
+    100% { -moz-transform: translateX(-60px) translateY(0px); }
+}
 .linkedIn4 {
     left: 250px;
     position: absolute;
     top: 600px;
     -webkit-animation: moveLinkedIn4 10s linear infinite;
+    -moz-animation: moveLinkedIn4 10s linear infinite;
 }
 
 @-webkit-keyframes moveTwitter4 {
@@ -422,11 +562,19 @@ body {
     70% { -webkit-transform: translateX(900px) translateY(0px); }
     100% { -webkit-transform: translateX(-100px) translateY(0px); }
 }
+@-moz-keyframes moveTwitter4 {
+    0%   { -moz-transform: translateX(-100px) translateY(0px); }
+    20%   { -moz-transform: translateX(-100px) translateY(-600px); }
+    50% { -moz-transform: translateX(900px) translateY(-600px); }
+    70% { -moz-transform: translateX(900px) translateY(0px); }
+    100% { -moz-transform: translateX(-100px) translateY(0px); }
+}
 .twitter4 {
     left: 100px;
     position: absolute;
     top: 600px;
     -webkit-animation: moveTwitter4 10s linear infinite;
+    -moz-animation: moveTwitter4 10s linear infinite;
 }
 
 @-webkit-keyframes moveDeviantArt4 {
@@ -436,11 +584,19 @@ body {
     95% { -webkit-transform: translateX(0px) translateY(150px); }
     100% { -webkit-transform: translateX(0px) translateY(0px); }
 }
+@-moz-keyframes moveDeviantArt4 {
+    15%   { -moz-transform: translateX(0px) translateY(-450px); }
+    45% { -moz-transform: translateX(1000px) translateY(-450px); }
+    65% { -moz-transform: translateX(1000px) translateY(150px); }
+    95% { -moz-transform: translateX(0px) translateY(150px); }
+    100% { -moz-transform: translateX(0px) translateY(0px); }
+}
 .deviantArt4 {
     left: 0px;
     position: absolute;
     top: 450px;
     -webkit-animation: moveDeviantArt4 10s linear infinite;
+    -moz-animation: moveDeviantArt4 10s linear infinite;
 }
 
 @-webkit-keyframes moveSoundCloud4 {
@@ -450,11 +606,19 @@ body {
     90% { -webkit-transform: translateX(0px) translateY(300px); }
     100% { -webkit-transform: translateX(0px) translateY(0px); }
 }
+@-moz-keyframes moveSoundCloud4 {
+    10%   { -moz-transform: translateX(0px) translateY(-300px); }
+    40% { -moz-transform: translateX(1000px) translateY(-300px); }
+    60% { -moz-transform: translateX(1000px) translateY(300px); }
+    90% { -moz-transform: translateX(0px) translateY(300px); }
+    100% { -moz-transform: translateX(0px) translateY(0px); }
+}
 .soundCloud4 {
     left: 0px;
     position: absolute;
     top: 300px;
     -webkit-animation: moveSoundCloud4 10s linear infinite;
+    -moz-animation: moveSoundCloud4 10s linear infinite;
 }
 
 @-webkit-keyframes moveGithub4 {
