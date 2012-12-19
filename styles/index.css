@@ -1,0 +1,32 @@
+body {
+    background-color: #000000;
+}
+
+.themeList {
+    width: 800px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -50px 0 0 -400px;
+}
+
+.theme {
+    float: left;
+    margin: 50px;
+    text-align: center;
+}
+
+a {
+    font-family: Courier;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+a:link {    
+    color: #ff7f00;
+}
+
+a:visited {    
+    color: #964b00;
+}

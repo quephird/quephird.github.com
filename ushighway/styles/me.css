@@ -146,7 +146,7 @@ img {
     width: 1000px;
 
     /* This is to extend the bottom of the div beyond the end of the page */
-    height: 1000px;
+    height: 1500px;
 }
 
 .signGroup {
@@ -170,7 +170,11 @@ img {
     margin:0 10px 10px 0;
     text-align: center;
     top: -50px;
-    width: 200px;
+    width: 300px;
+}
+
+.signIcon {
+    float: left;
 }
 
 .signText {
@@ -180,7 +184,7 @@ img {
     text-decoration: none;
 }
 
-.signIcon {
+.exitArrow {
     color: white;
     font-family: 'Roadgeek2005Arrows1Regular';
     font-size: 72pt;

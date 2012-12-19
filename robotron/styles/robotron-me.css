@@ -102,10 +102,6 @@ body {
     -o-animation-duration: 0.5s;
     -o-animation-timing-function: linear;
     -o-animation-iteration-count: infinite;
-    animation-name: cycleAllColors;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
     font-family: 'Robotron-2084';
     font-size: 60pt;
     text-align: center;
