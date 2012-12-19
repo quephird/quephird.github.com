@@ -168,13 +168,12 @@ img {
     border-width: 5px;
     display: inline-block;
     margin:0 10px 10px 0;
-    text-align: center;
     top: -50px;
-    width: 300px;
+    width: 250px;
 }
 
 .signIcon {
-    float: left;
+    margin: 10px 0px 0px 0px;
 }
 
 .signText {

@@ -17,6 +17,14 @@ body {
     text-align: center;
 }
 
+.whoami {
+    color: #ff7f00;
+    font-family: Courier;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
 a {
     font-family: Courier;
     font-size: x-large;
