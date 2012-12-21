@@ -31,10 +31,10 @@ body {
     0% {
         color: cyan;
     }
-    49% {
+    16% {
         color: cyan;
     }
-    50% {
+    17% {
         color: black;
     }
     100% {
@@ -43,10 +43,10 @@ body {
 }
 
 .longAgo {
-    -webkit-animation: introShowAndDisappear 10s linear infinite;
+    -webkit-animation: introShowAndDisappear 30s linear infinite;
     font-family: 'SWCrawlBody';
     font-size: 24pt;
-    width: 500px;
+    width: 600px;
     height: 100px;
     position: absolute;
     left: 50%;
@@ -62,8 +62,15 @@ body {
         height: 800px;
         margin: -400px 0 0 -1500px;
     }
-    50% {
+    17% {
         color: orange;
+        font-size: 0pt;
+        width: 0px;
+        height: 0px;
+        margin: 0px 0 0 0px;
+    }
+    33% {
+        color: black;
         font-size: 0pt;
         width: 0px;
         height: 0px;
@@ -79,7 +86,7 @@ body {
 }
 
 .me {
-    -webkit-animation: zoomOut 10s linear infinite;
+    -webkit-animation: zoomOut 30s linear infinite;
     -webkit-animation-delay: 5s;
     color: black;
     font-family: 'StarJediHollow';
@@ -88,4 +95,28 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
+}
+
+@-webkit-keyframes crawl {
+    0% {
+        -webkit-transform: perspective(500px) rotateX(45deg) translateY(800px);
+    }
+    33% {
+        -webkit-transform: perspective(500px) rotateX(45deg) translateY(800px);
+    }
+    100% {
+        -webkit-transform: perspective(500px) rotateX(45deg) translateY(-2000px);
+    }
+}
+
+.crawlText {
+    -webkit-animation: crawl 30s linear infinite;
+    -webkit-transform: perspective(500px) rotateX(45deg) translateY(800px);
+    font-family: 'SWCrawlBody';
+    color: orange;
+    font-size: 24pt;
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    margin: -50px 0 0 -250px;
 }
