@@ -87,13 +87,13 @@ body {
     position: absolute;
     top: 125px;
     width: 900px;
-}    
+}
 
 .me {
     -moz-animation-name: cycleAllColors;
     -moz-animation-duration: 0.5s;
     -moz-animation-timing-function: linear;
-    -moz-animation-iteration-count: infinite; 
+    -moz-animation-iteration-count: infinite;
     -webkit-animation-name: cycleAllColors;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-timing-function: linear;
@@ -103,7 +103,7 @@ body {
     -o-animation-timing-function: linear;
     -o-animation-iteration-count: infinite;
     font-family: 'Robotron-2084';
-    font-size: 60pt;
+    font-size: 50pt;
     text-align: center;
     text-shadow: 0 -3px yellow, 3px 0 yellow, 0 3px yellow, -3px 0 yellow;
 }
@@ -116,7 +116,7 @@ body {
     -moz-animation-name: orangeAndWhite;
     -moz-animation-duration: 0.5s;
     -moz-animation-timing-function: linear;
-    -moz-animation-iteration-count: infinite; 
+    -moz-animation-iteration-count: infinite;
     -webkit-animation-name: orangeAndWhite;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-timing-function: linear;
@@ -134,7 +134,7 @@ body {
     -moz-animation-name: blueAndWhite;
     -moz-animation-duration: 0.5s;
     -moz-animation-timing-function: linear;
-    -moz-animation-iteration-count: infinite; 
+    -moz-animation-iteration-count: infinite;
     -webkit-animation-name: blueAndWhite;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-timing-function: linear;
@@ -148,7 +148,7 @@ body {
     -moz-animation-name: orangeAndWhite;
     -moz-animation-duration: 0.5s;
     -moz-animation-timing-function: linear;
-    -moz-animation-iteration-count: infinite; 
+    -moz-animation-iteration-count: infinite;
     -webkit-animation-name: orangeAndWhite;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-timing-function: linear;
@@ -163,7 +163,7 @@ body {
     -moz-animation-name: cycleAllColors;
     -moz-animation-duration: 0.5s;
     -moz-animation-timing-function: linear;
-    -moz-animation-iteration-count: infinite; 
+    -moz-animation-iteration-count: infinite;
     /* Safari and Chrome */
     -webkit-animation-name: cycleAllColors;
     -webkit-animation-duration: 0.5s;
