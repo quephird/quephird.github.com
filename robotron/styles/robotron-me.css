@@ -83,10 +83,38 @@ body {
 }
 
 .content {
-    left: 140px;
-    position: absolute;
-    top: 125px;
-    width: 900px;
+    width:900px;
+    height:450px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-225px 0 0 -450px;
+}
+
+/*
+  The width is precomputed as:
+
+     width = max delta-x + width of each icon
+           = 1000 + 132
+           = 1132
+
+  Similarly, the height is precomputed as:
+
+     height = max delta-y + height of each icon
+            = 600 + 122
+            = 722
+
+  The x and y margin values are precomputed as
+  -width/2 and -height/2, respectively.
+*/
+
+.dancingIcons {
+    width:1132px;
+    height:722px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-361px 0 0 -566px;
 }
 
 .me {
@@ -190,8 +218,8 @@ body {
     100% { -moz-transform: translateX(0px) translateY(0px); }
 }
 .linkedIn1 {
-    left: 0px;
     position: absolute;
+    left: 0px;
     top: 0px;
     -webkit-animation: moveLinkedIn1 10s linear infinite;
     -moz-animation: moveLinkedIn1 10s linear infinite;
