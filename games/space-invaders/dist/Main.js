@@ -694,6 +694,19 @@ var PS = { };
     };
   };
 
+  exports.findLastIndexImpl = function (just) {
+    return function (nothing) {
+      return function (f) {
+        return function (xs) {
+          for (var i = xs.length - 1; i >= 0; i--) {
+            if (f(xs[i])) return just(i);
+          }
+          return nothing;
+        };
+      };
+    };
+  };
+
   exports._deleteAt = function (just) {
     return function (nothing) {
       return function (i) {
@@ -993,6 +1006,7 @@ var PS = { };
           return new Data_Maybe.Just(x);
       };
   });
+  var findLastIndex = $foreign.findLastIndexImpl(Data_Maybe.Just.create)(Data_Maybe.Nothing.value);
   var findIndex = $foreign.findIndexImpl(Data_Maybe.Just.create)(Data_Maybe.Nothing.value);
   var deleteAt = $foreign._deleteAt(Data_Maybe.Just.create)(Data_Maybe.Nothing.value);
   var deleteBy = function (eq) {
@@ -1032,6 +1046,7 @@ var PS = { };
   exports["nubBy"] = nubBy;
   exports["nub"] = nub;
   exports["deleteAt"] = deleteAt;
+  exports["findLastIndex"] = findLastIndex;
   exports["findIndex"] = findIndex;
   exports["index"] = index;
   exports["!!"] = $bang$bang;
@@ -1727,57 +1742,57 @@ var PS = { };
               return Prelude["return"](Prelude.applicativeArray)(Entities_Invader.makeInvader(50.0 + 75.0 * Data_Int.toNumber(_1))(100.0 + 75.0 * Data_Int.toNumber(_0))(_1 + (7 * _0 | 0) | 0));
           });
       });
-      return new Patrol(makeInvaders, Right.value, 5.0);
+      return new Patrol(makeInvaders, Right.value, 2.0);
   })();                                                                      
-  var eqDirection = new Prelude.Eq(function (_47) {
-      return function (_48) {
-          if (_47 instanceof Left && _48 instanceof Left) {
+  var eqDirection = new Prelude.Eq(function (_30) {
+      return function (_31) {
+          if (_30 instanceof Left && _31 instanceof Left) {
               return true;
           };
-          if (_47 instanceof Right && _48 instanceof Right) {
+          if (_30 instanceof Right && _31 instanceof Right) {
               return true;
           };
           return false;
       };
   });
-  var invaders = Optic_Lens.lens(function (_41) {
-      if (_41 instanceof Patrol) {
-          return _41.value0;
+  var invaders = Optic_Lens.lens(function (_24) {
+      if (_24 instanceof Patrol) {
+          return _24.value0;
       };
-      throw new Error("Failed pattern match: " + [ _41.constructor.name ]);
-  })(function (_42) {
-      if (_42 instanceof Patrol) {
+      throw new Error("Failed pattern match: " + [ _24.constructor.name ]);
+  })(function (_25) {
+      if (_25 instanceof Patrol) {
           return function (invaders$prime) {
-              return new Patrol(invaders$prime, _42.value1, _42.value2);
+              return new Patrol(invaders$prime, _25.value1, _25.value2);
           };
       };
-      throw new Error("Failed pattern match: " + [ _42.constructor.name ]);
+      throw new Error("Failed pattern match: " + [ _25.constructor.name ]);
   });
-  var dx = Optic_Lens.lens(function (_45) {
-      if (_45 instanceof Patrol) {
-          return _45.value2;
+  var dx = Optic_Lens.lens(function (_28) {
+      if (_28 instanceof Patrol) {
+          return _28.value2;
       };
-      throw new Error("Failed pattern match: " + [ _45.constructor.name ]);
-  })(function (_46) {
-      if (_46 instanceof Patrol) {
+      throw new Error("Failed pattern match: " + [ _28.constructor.name ]);
+  })(function (_29) {
+      if (_29 instanceof Patrol) {
           return function (dx$prime) {
-              return new Patrol(_46.value0, _46.value1, dx$prime);
+              return new Patrol(_29.value0, _29.value1, dx$prime);
           };
       };
-      throw new Error("Failed pattern match: " + [ _46.constructor.name ]);
+      throw new Error("Failed pattern match: " + [ _29.constructor.name ]);
   });
-  var direction = Optic_Lens.lens(function (_43) {
-      if (_43 instanceof Patrol) {
-          return _43.value1;
+  var direction = Optic_Lens.lens(function (_26) {
+      if (_26 instanceof Patrol) {
+          return _26.value1;
       };
-      throw new Error("Failed pattern match at Entities.Enemies line 28, column 1 - line 30, column 1: " + [ _43.constructor.name ]);
-  })(function (_44) {
-      if (_44 instanceof Patrol) {
+      throw new Error("Failed pattern match at Entities.Enemies line 27, column 1 - line 29, column 1: " + [ _26.constructor.name ]);
+  })(function (_27) {
+      if (_27 instanceof Patrol) {
           return function (dir$prime) {
-              return new Patrol(_44.value0, dir$prime, _44.value2);
+              return new Patrol(_27.value0, dir$prime, _27.value2);
           };
       };
-      throw new Error("Failed pattern match at Entities.Enemies line 28, column 1 - line 30, column 1: " + [ _44.constructor.name ]);
+      throw new Error("Failed pattern match at Entities.Enemies line 27, column 1 - line 29, column 1: " + [ _27.constructor.name ]);
   });
   exports["Patrol"] = Patrol;
   exports["Left"] = Left;
@@ -2327,8 +2342,8 @@ var PS = { };
   // Generated by psc version 0.7.4.1
   "use strict";
   var Optic_Lens = PS["Optic.Lens"];
-  var Optic_Getter = PS["Optic.Getter"];
   var Optic_Setter = PS["Optic.Setter"];
+  var Optic_Getter = PS["Optic.Getter"];
   var Prelude = PS["Prelude"];
   var Control_Monad_Eff = PS["Control.Monad.Eff"];
   var Control_Monad_ST = PS["Control.Monad.ST"];
@@ -2345,9 +2360,23 @@ var PS = { };
   var Entities_Sounds = PS["Entities.Sounds"];
   var Entities_Sprites = PS["Entities.Sprites"];
   var Helpers_Audio = PS["Helpers.Audio"];
-  var Data_Const = PS["Data.Const"];
-  var Data_Profunctor = PS["Data.Profunctor"];
   var Data_Identity = PS["Data.Identity"];
+  var Data_Const = PS["Data.Const"];
+  var Data_Profunctor = PS["Data.Profunctor"];     
+  var GameOver = (function () {
+      function GameOver() {
+
+      };
+      GameOver.value = new GameOver();
+      return GameOver;
+  })();
+  var Playing = (function () {
+      function Playing() {
+
+      };
+      Playing.value = new Playing();
+      return Playing;
+  })();
   var Waiting = (function () {
       function Waiting() {
 
@@ -2364,124 +2393,148 @@ var PS = { };
       };
       return Game;
   })();
-  var w = Optic_Lens.lens(function (_22) {
-      return _22.value0.w;
-  })(function (_23) {
+  var w = Optic_Lens.lens(function (_27) {
+      return _27.value0.w;
+  })(function (_28) {
       return function (w$prime) {
           return new Game((function () {
-              var _56 = {};
-              for (var _57 in _23.value0) {
-                  if (_23.value0.hasOwnProperty(_57)) {
-                      _56[_57] = _23.value0[_57];
+              var _65 = {};
+              for (var _66 in _28.value0) {
+                  if (_28.value0.hasOwnProperty(_66)) {
+                      _65[_66] = _28.value0[_66];
                   };
               };
-              _56.w = w$prime;
-              return _56;
+              _65.w = w$prime;
+              return _65;
           })());
       };
   });
-  var startTime = Optic_Lens.lens(function (_26) {
-      return _26.value0.startTime;
-  })(function (_27) {
+  var status = Optic_Lens.lens(function (_33) {
+      return _33.value0.status;
+  })(function (_34) {
+      return function (status$prime) {
+          return new Game((function () {
+              var _71 = {};
+              for (var _72 in _34.value0) {
+                  if (_34.value0.hasOwnProperty(_72)) {
+                      _71[_72] = _34.value0[_72];
+                  };
+              };
+              _71.status = status$prime;
+              return _71;
+          })());
+      };
+  });
+  var startTime = Optic_Lens.lens(function (_31) {
+      return _31.value0.startTime;
+  })(function (_32) {
       return function (startTime$prime) {
           return new Game((function () {
-              var _62 = {};
-              for (var _63 in _27.value0) {
-                  if (_27.value0.hasOwnProperty(_63)) {
-                      _62[_63] = _27.value0[_63];
+              var _77 = {};
+              for (var _78 in _32.value0) {
+                  if (_32.value0.hasOwnProperty(_78)) {
+                      _77[_78] = _32.value0[_78];
                   };
               };
-              _62.startTime = startTime$prime;
-              return _62;
+              _77.startTime = startTime$prime;
+              return _77;
           })());
       };
   });
-  var sprites = Optic_Lens.lens(function (_40) {
-      return _40.value0.sprites;
-  })(function (_41) {
+  var startGame = function (gRef) {
+      return function __do() {
+          var _3 = Control_Monad_ST.readSTRef(gRef)();
+          return Control_Monad_ST.modifySTRef(gRef)(function (g_1) {
+              return Optic_Setter[".~"](status(Data_Identity.functorIdentity))(Playing.value)(g_1);
+          })();
+      };
+  };
+  var sprites = Optic_Lens.lens(function (_47) {
+      return _47.value0.sprites;
+  })(function (_48) {
       return function (sprites$prime) {
           return new Game((function () {
-              var _68 = {};
-              for (var _69 in _41.value0) {
-                  if (_41.value0.hasOwnProperty(_69)) {
-                      _68[_69] = _41.value0[_69];
+              var _84 = {};
+              for (var _85 in _48.value0) {
+                  if (_48.value0.hasOwnProperty(_85)) {
+                      _84[_85] = _48.value0[_85];
                   };
               };
-              _68.sprites = sprites$prime;
-              return _68;
+              _84.sprites = sprites$prime;
+              return _84;
           })());
       };
   });
-  var sounds = Optic_Lens.lens(function (_42) {
-      return _42.value0.sounds;
-  })(function (_43) {
+  var sounds = Optic_Lens.lens(function (_49) {
+      return _49.value0.sounds;
+  })(function (_50) {
       return function (sounds$prime) {
           return new Game((function () {
-              var _74 = {};
-              for (var _75 in _43.value0) {
-                  if (_43.value0.hasOwnProperty(_75)) {
-                      _74[_75] = _43.value0[_75];
+              var _90 = {};
+              for (var _91 in _50.value0) {
+                  if (_50.value0.hasOwnProperty(_91)) {
+                      _90[_91] = _50.value0[_91];
                   };
               };
-              _74.sounds = sounds$prime;
-              return _74;
+              _90.sounds = sounds$prime;
+              return _90;
           })());
       };
   });
   var shotInvaderSprite = function (__dict_Functor_0) {
       return Optic_Core[".."](Prelude.semigroupoidFn)(sprites(__dict_Functor_0))(Entities_Sprites.shotInvader(__dict_Functor_0));
   };
-  var score = Optic_Lens.lens(function (_28) {
-      return _28.value0.score;
-  })(function (_29) {
+  var score = Optic_Lens.lens(function (_35) {
+      return _35.value0.score;
+  })(function (_36) {
       return function (score$prime) {
           return new Game((function () {
-              var _80 = {};
-              for (var _81 in _29.value0) {
-                  if (_29.value0.hasOwnProperty(_81)) {
-                      _80[_81] = _29.value0[_81];
+              var _96 = {};
+              for (var _97 in _36.value0) {
+                  if (_36.value0.hasOwnProperty(_97)) {
+                      _96[_97] = _36.value0[_97];
                   };
               };
-              _80.score = score$prime;
-              return _80;
+              _96.score = score$prime;
+              return _96;
           })());
       };
   });
   var playerSprite = function (__dict_Functor_1) {
       return Optic_Core[".."](Prelude.semigroupoidFn)(sprites(__dict_Functor_1))(Entities_Sprites.player(__dict_Functor_1));
   };
-  var playerBullets = Optic_Lens.lens(function (_34) {
-      return _34.value0.playerBullets;
-  })(function (_35) {
+  var playerBullets = Optic_Lens.lens(function (_41) {
+      return _41.value0.playerBullets;
+  })(function (_42) {
       return function (playerBullets$prime) {
           return new Game((function () {
-              var _86 = {};
-              for (var _87 in _35.value0) {
-                  if (_35.value0.hasOwnProperty(_87)) {
-                      _86[_87] = _35.value0[_87];
+              var _102 = {};
+              for (var _103 in _42.value0) {
+                  if (_42.value0.hasOwnProperty(_103)) {
+                      _102[_103] = _42.value0[_103];
                   };
               };
-              _86.playerBullets = playerBullets$prime;
-              return _86;
+              _102.playerBullets = playerBullets$prime;
+              return _102;
           })());
       };
   });
   var playerBulletSprite = function (__dict_Functor_2) {
       return Optic_Core[".."](Prelude.semigroupoidFn)(sprites(__dict_Functor_2))(Entities_Sprites.playerBullet(__dict_Functor_2));
   };
-  var player = Optic_Lens.lens(function (_32) {
-      return _32.value0.player;
-  })(function (_33) {
+  var player = Optic_Lens.lens(function (_39) {
+      return _39.value0.player;
+  })(function (_40) {
       return function (player$prime) {
           return new Game((function () {
-              var _92 = {};
-              for (var _93 in _33.value0) {
-                  if (_33.value0.hasOwnProperty(_93)) {
-                      _92[_93] = _33.value0[_93];
+              var _108 = {};
+              for (var _109 in _40.value0) {
+                  if (_40.value0.hasOwnProperty(_109)) {
+                      _108[_109] = _40.value0[_109];
                   };
               };
-              _92.player = player$prime;
-              return _92;
+              _108.player = player$prime;
+              return _108;
           })());
       };
   });
@@ -2518,19 +2571,19 @@ var PS = { };
           };
       };
   };
-  var lives = Optic_Lens.lens(function (_30) {
-      return _30.value0.lives;
-  })(function (_31) {
+  var lives = Optic_Lens.lens(function (_37) {
+      return _37.value0.lives;
+  })(function (_38) {
       return function (lives$prime) {
           return new Game((function () {
-              var _101 = {};
-              for (var _102 in _31.value0) {
-                  if (_31.value0.hasOwnProperty(_102)) {
-                      _101[_102] = _31.value0[_102];
+              var _117 = {};
+              for (var _118 in _38.value0) {
+                  if (_38.value0.hasOwnProperty(_118)) {
+                      _117[_118] = _38.value0[_118];
                   };
               };
-              _101.lives = lives$prime;
-              return _101;
+              _117.lives = lives$prime;
+              return _117;
           })());
       };
   });
@@ -2543,51 +2596,51 @@ var PS = { };
   var invaderShotSound = function (__dict_Functor_8) {
       return Optic_Core[".."](Prelude.semigroupoidFn)(sounds(__dict_Functor_8))(Entities_Sounds.invaderShot(__dict_Functor_8));
   };
-  var h = Optic_Lens.lens(function (_24) {
-      return _24.value0.h;
-  })(function (_25) {
+  var h = Optic_Lens.lens(function (_29) {
+      return _29.value0.h;
+  })(function (_30) {
       return function (h$prime) {
           return new Game((function () {
-              var _107 = {};
-              for (var _108 in _25.value0) {
-                  if (_25.value0.hasOwnProperty(_108)) {
-                      _107[_108] = _25.value0[_108];
+              var _123 = {};
+              for (var _124 in _30.value0) {
+                  if (_30.value0.hasOwnProperty(_124)) {
+                      _123[_124] = _30.value0[_124];
                   };
               };
-              _107.h = h$prime;
-              return _107;
+              _123.h = h$prime;
+              return _123;
           })());
       };
   });
-  var events = Optic_Lens.lens(function (_38) {
-      return _38.value0.events;
-  })(function (_39) {
+  var events = Optic_Lens.lens(function (_45) {
+      return _45.value0.events;
+  })(function (_46) {
       return function (events$prime) {
           return new Game((function () {
-              var _113 = {};
-              for (var _114 in _39.value0) {
-                  if (_39.value0.hasOwnProperty(_114)) {
-                      _113[_114] = _39.value0[_114];
+              var _129 = {};
+              for (var _130 in _46.value0) {
+                  if (_46.value0.hasOwnProperty(_130)) {
+                      _129[_130] = _46.value0[_130];
                   };
               };
-              _113.events = events$prime;
-              return _113;
+              _129.events = events$prime;
+              return _129;
           })());
       };
   });
-  var enemies = Optic_Lens.lens(function (_36) {
-      return _36.value0.enemies;
-  })(function (_37) {
+  var enemies = Optic_Lens.lens(function (_43) {
+      return _43.value0.enemies;
+  })(function (_44) {
       return function (enemies$prime) {
           return new Game((function () {
-              var _119 = {};
-              for (var _120 in _37.value0) {
-                  if (_37.value0.hasOwnProperty(_120)) {
-                      _119[_120] = _37.value0[_120];
+              var _135 = {};
+              for (var _136 in _44.value0) {
+                  if (_44.value0.hasOwnProperty(_136)) {
+                      _135[_136] = _44.value0[_136];
                   };
               };
-              _119.enemies = enemies$prime;
-              return _119;
+              _135.enemies = enemies$prime;
+              return _135;
           })());
       };
   });
@@ -2605,9 +2658,9 @@ var PS = { };
   };
   var createPlayerBullet = function (gRef) {
       return function __do() {
-          var _3 = Control_Monad_ST.readSTRef(gRef)();
+          var _4 = Control_Monad_ST.readSTRef(gRef)();
           return (function () {
-              var newPlayerBullet = Entities_Bullet.makePlayerBullet(Optic_Getter["^."](_3)(playerX(Data_Const.functorConst)))(Optic_Getter["^."](_3)(playerY(Data_Const.functorConst)));
+              var newPlayerBullet = Entities_Bullet.makePlayerBullet(Optic_Getter["^."](_4)(playerX(Data_Const.functorConst)))(Optic_Getter["^."](_4)(playerY(Data_Const.functorConst)));
               return Control_Monad_ST.modifySTRef(gRef)(function (g_1) {
                   return Optic_Setter["%~"](Data_Profunctor.profunctorFn)(playerBullets(Data_Identity.functorIdentity))(Data_Array.cons(newPlayerBullet))(g_1);
               });
@@ -2615,8 +2668,11 @@ var PS = { };
       };
   };
   exports["Game"] = Game;
+  exports["GameOver"] = GameOver;
+  exports["Playing"] = Playing;
   exports["Waiting"] = Waiting;
   exports["createPlayerBullet"] = createPlayerBullet;
+  exports["startGame"] = startGame;
   exports["makeGame"] = makeGame;
   exports["invaderShotSound"] = invaderShotSound;
   exports["newPlayerBulletSound"] = newPlayerBulletSound;
@@ -2639,6 +2695,7 @@ var PS = { };
   exports["player"] = player;
   exports["lives"] = lives;
   exports["score"] = score;
+  exports["status"] = status;
   exports["startTime"] = startTime;
   exports["h"] = h;
   exports["w"] = w;;
@@ -2695,24 +2752,24 @@ var PS = { };
   };
   var checkInvadersShot = function (gRef) {
       return function __do() {
-          var _6 = Control_Monad_ST.readSTRef(gRef)();
+          var _7 = Control_Monad_ST.readSTRef(gRef)();
           return (function () {
-              var currInvaders = Optic_Getter["^."](_6)(Entities_Game.invaders(Data_Const.functorConst));
-              var currEvents = Optic_Getter["^."](_6)(Entities_Game.events(Data_Const.functorConst));
-              var currBullets = Optic_Getter["^."](_6)(Entities_Game.playerBullets(Data_Const.functorConst));
-              var collisions = Data_Array.filter(function (_44) {
-                  return isShot(shootableInvader)(_44.value0)(_44.value1);
-              })(Prelude.bind(Prelude.bindArray)(currInvaders)(function (_5) {
-                  return Prelude.bind(Prelude.bindArray)(currBullets)(function (_4) {
-                      return Prelude["return"](Prelude.applicativeArray)(new Data_Tuple.Tuple(_5, _4));
+              var currInvaders = Optic_Getter["^."](_7)(Entities_Game.invaders(Data_Const.functorConst));
+              var currEvents = Optic_Getter["^."](_7)(Entities_Game.events(Data_Const.functorConst));
+              var currBullets = Optic_Getter["^."](_7)(Entities_Game.playerBullets(Data_Const.functorConst));
+              var collisions = Data_Array.filter(function (_51) {
+                  return isShot(shootableInvader)(_51.value0)(_51.value1);
+              })(Prelude.bind(Prelude.bindArray)(currInvaders)(function (_6) {
+                  return Prelude.bind(Prelude.bindArray)(currBullets)(function (_5) {
+                      return Prelude["return"](Prelude.applicativeArray)(new Data_Tuple.Tuple(_6, _5));
                   });
               }));
-              var deadBullets = Prelude.map(Prelude.functorArray)(function (_46) {
-                  return _46.value1;
+              var deadBullets = Prelude.map(Prelude.functorArray)(function (_53) {
+                  return _53.value1;
               })(collisions);
               var newBullets = Data_Array["\\\\"](Entities_Bullet.eqBullet)(currBullets)(deadBullets);
-              var shotInvaders = Data_Array.nub(Entities_Invader.eqInvader)(Prelude.map(Prelude.functorArray)(function (_45) {
-                  return Optic_Setter[".~"](Entities_Invader.status(Data_Identity.functorIdentity))(Entities_Invader.Shot.value)(_45.value0);
+              var shotInvaders = Data_Array.nub(Entities_Invader.eqInvader)(Prelude.map(Prelude.functorArray)(function (_52) {
+                  return Optic_Setter[".~"](Entities_Invader.status(Data_Identity.functorIdentity))(Entities_Invader.Shot.value)(_52.value0);
               })(collisions));
               var newEvents = computeNewEvents(currEvents)(Data_Array.length(shotInvaders));
               var newPoints = 100 * Data_Array.length(shotInvaders) | 0;
@@ -2744,14 +2801,14 @@ var PS = { };
   var Data_Const = PS["Data.Const"];     
   var playNewPlayerBulletSound = function (gRef) {
       return function __do() {
-          var _13 = Control_Monad_ST.readSTRef(gRef)();
-          return Helpers_Audio.playSound(Optic_Getter["^."](_13)(Entities_Game.newPlayerBulletSound(Data_Const.functorConst)))();
+          var _18 = Control_Monad_ST.readSTRef(gRef)();
+          return Helpers_Audio.playSound(Optic_Getter["^."](_18)(Entities_Game.newPlayerBulletSound(Data_Const.functorConst)))();
       };
   };
   var playInvaderShotSound = function (gRef) {
       return function __do() {
-          var _14 = Control_Monad_ST.readSTRef(gRef)();
-          return Helpers_Audio.playSound(Optic_Getter["^."](_14)(Entities_Game.invaderShotSound(Data_Const.functorConst)))();
+          var _19 = Control_Monad_ST.readSTRef(gRef)();
+          return Helpers_Audio.playSound(Optic_Getter["^."](_19)(Entities_Game.invaderShotSound(Data_Const.functorConst)))();
       };
   };
   exports["playInvaderShotSound"] = playInvaderShotSound;
@@ -2773,9 +2830,9 @@ var PS = { };
   var Handlers_Sound = PS["Handlers.Sound"];
   var Data_Const = PS["Data.Const"];
   var Data_Identity = PS["Data.Identity"];     
-  var processEvent = function (_51) {
+  var processEvent = function (_60) {
       return function (gRef) {
-          if (_51.value0 instanceof Entities_Event.InvaderShot) {
+          if (_60.value0 instanceof Entities_Event.InvaderShot) {
               return Handlers_Sound.playInvaderShotSound(gRef);
           };
           return Prelude["return"](Control_Monad_Eff.applicativeEff)(Prelude.unit);
@@ -2783,9 +2840,9 @@ var PS = { };
   };
   var processEvents = function (gRef) {
       return function __do() {
-          var _16 = Control_Monad_ST.readSTRef(gRef)();
+          var _21 = Control_Monad_ST.readSTRef(gRef)();
           return (function () {
-              var currEvents = Optic_Getter["^."](_16)(Entities_Game.events(Data_Const.functorConst));
+              var currEvents = Optic_Getter["^."](_21)(Entities_Game.events(Data_Const.functorConst));
               var newEvents = Prelude.map(Prelude.functorArray)(function (e) {
                   return Optic_Setter[".~"](Entities_Event.status(Data_Identity.functorIdentity))(Entities_Event.Handled.value)(e);
               })(currEvents);
@@ -2809,9 +2866,9 @@ var PS = { };
   };
   var clearHandledEvents = function (gRef) {
       return function __do() {
-          var _15 = Control_Monad_ST.readSTRef(gRef)();
+          var _20 = Control_Monad_ST.readSTRef(gRef)();
           return (function () {
-              var currEvents = Optic_Getter["^."](_15)(Entities_Game.events(Data_Const.functorConst));
+              var currEvents = Optic_Getter["^."](_20)(Entities_Game.events(Data_Const.functorConst));
               var unhandledEvents = Data_Array.filter(function (e) {
                   return Prelude["=="](Entities_Event.eqStatus)(Optic_Getter["^."](e)(Entities_Event.status(Data_Const.functorConst)))(Entities_Event.New.value);
               })(currEvents);
@@ -2830,9 +2887,9 @@ var PS = { };
   // Generated by psc version 0.7.4.1
   "use strict";
   var Optic_Setter = PS["Optic.Setter"];
+  var Optic_Getter = PS["Optic.Getter"];
   var Prelude = PS["Prelude"];
   var Control_Monad_Eff = PS["Control.Monad.Eff"];
-  var Control_Monad_Eff_Class = PS["Control.Monad.Eff.Class"];
   var Control_Monad_ST = PS["Control.Monad.ST"];
   var DOM_Event_EventTarget = PS["DOM.Event.EventTarget"];
   var DOM_Event_Types = PS["DOM.Event.Types"];
@@ -2840,7 +2897,8 @@ var PS = { };
   var Unsafe_Coerce = PS["Unsafe.Coerce"];
   var Entities_Game = PS["Entities.Game"];
   var Handlers_Sound = PS["Handlers.Sound"];
-  var Data_Identity = PS["Data.Identity"];     
+  var Data_Identity = PS["Data.Identity"];
+  var Data_Const = PS["Data.Const"];     
   var Left = (function () {
       function Left() {
 
@@ -2861,6 +2919,13 @@ var PS = { };
       };
       SpaceBar.value = new SpaceBar();
       return SpaceBar;
+  })();
+  var S = (function () {
+      function S() {
+
+      };
+      S.value = new S();
+      return S;
   })();
   var Other = (function () {
       function Other() {
@@ -2885,45 +2950,60 @@ var PS = { };
           });
       };
   };
-  var respondToKey = function (_52) {
-      return function (gRef) {
-          if (_52 instanceof Left) {
-              return movePlayer(Left.value)(gRef);
-          };
-          if (_52 instanceof Right) {
-              return movePlayer(Right.value)(gRef);
-          };
-          if (_52 instanceof SpaceBar) {
-              return function __do() {
-                  Handlers_Sound.playNewPlayerBulletSound(gRef)();
-                  return Entities_Game.createPlayerBullet(gRef)();
+  var respondToKey = function (_4) {
+      return function (_5) {
+          return function (gRef) {
+              if (_4 instanceof Left && _5 instanceof Entities_Game.Playing) {
+                  return movePlayer(Left.value)(gRef);
               };
+              if (_4 instanceof Right && _5 instanceof Entities_Game.Playing) {
+                  return movePlayer(Right.value)(gRef);
+              };
+              if (_4 instanceof SpaceBar && _5 instanceof Entities_Game.Playing) {
+                  return function __do() {
+                      Handlers_Sound.playNewPlayerBulletSound(gRef)();
+                      return Entities_Game.createPlayerBullet(gRef)();
+                  };
+              };
+              if (_4 instanceof S && _5 instanceof Entities_Game.Waiting) {
+                  return Entities_Game.startGame(gRef);
+              };
+              return Control_Monad_ST.readSTRef(gRef);
           };
-          return Control_Monad_ST.readSTRef(gRef);
       };
   };
   var eventToKeyboardEvent = Unsafe_Coerce.unsafeCoerce;
   var onKeydown = function (gRef) {
       return DOM_Event_EventTarget.eventListener(function (evt) {
-          var keyboardEvent = eventToKeyboardEvent(evt);
-          var key = (function () {
-              if (keyboardEvent.keyCode === 32) {
-                  return SpaceBar.value;
-              };
-              if (keyboardEvent.keyCode === 37) {
-                  return Left.value;
-              };
-              if (keyboardEvent.keyCode === 39) {
-                  return Right.value;
-              };
-              return Other.value;
-          })();
-          return respondToKey(key)(gRef);
+          return function __do() {
+              var _0 = Control_Monad_ST.readSTRef(gRef)();
+              return (function () {
+                  var keyboardEvent = eventToKeyboardEvent(evt);
+                  var gameStatus = Optic_Getter["^."](_0)(Entities_Game.status(Data_Const.functorConst));
+                  var key = (function () {
+                      if (keyboardEvent.keyCode === 32) {
+                          return SpaceBar.value;
+                      };
+                      if (keyboardEvent.keyCode === 37) {
+                          return Left.value;
+                      };
+                      if (keyboardEvent.keyCode === 39) {
+                          return Right.value;
+                      };
+                      if (keyboardEvent.keyCode === 83) {
+                          return S.value;
+                      };
+                      return Other.value;
+                  })();
+                  return respondToKey(key)(gameStatus)(gRef);
+              })()();
+          };
       });
   };
   exports["Left"] = Left;
   exports["Right"] = Right;
   exports["SpaceBar"] = SpaceBar;
+  exports["S"] = S;
   exports["Other"] = Other;
   exports["onKeydown"] = onKeydown;
   exports["eventToKeyboardEvent"] = eventToKeyboardEvent;
@@ -2941,6 +3021,7 @@ var PS = { };
   var Control_Monad_ST = PS["Control.Monad.ST"];
   var Data_Array = PS["Data.Array"];
   var Data_Foldable = PS["Data.Foldable"];
+  var Data_Int = PS["Data.Int"];
   var Data_Maybe = PS["Data.Maybe"];
   var Data_Maybe_Unsafe = PS["Data.Maybe.Unsafe"];
   var $$Math = PS["Math"];
@@ -2954,9 +3035,9 @@ var PS = { };
   var Data_Identity = PS["Data.Identity"];     
   var movePlayerBullets = function (gRef) {
       return function __do() {
-          var _7 = Control_Monad_ST.readSTRef(gRef)();
+          var _8 = Control_Monad_ST.readSTRef(gRef)();
           return (function () {
-              var playerBullets = Optic_Getter["^."](_7)(Entities_Game.playerBullets(Data_Const.functorConst));
+              var playerBullets = Optic_Getter["^."](_8)(Entities_Game.playerBullets(Data_Const.functorConst));
               var newPlayerBullets = Prelude.map(Prelude.functorArray)(function (b) {
                   return Optic_Setter["-~"](Prelude.ringNumber)(Entities_Bullet.y(Data_Identity.functorIdentity))(20.0)(b);
               })(playerBullets);
@@ -2988,41 +3069,50 @@ var PS = { };
           if (Prelude.otherwise) {
               return 32.0;
           };
-          throw new Error("Failed pattern match at Handlers.Motion line 60, column 1 - line 63, column 1: " + [ newDir.constructor.name, currDir.constructor.name ]);
+          throw new Error("Failed pattern match at Handlers.Motion line 66, column 1 - line 69, column 1: " + [ newDir.constructor.name, currDir.constructor.name ]);
       };
   };
   var computeDx = function (newDir) {
       return function (currDir) {
           return function (currDx) {
-              if (Prelude["=="](Entities_Enemies.eqDirection)(newDir)(currDir)) {
-                  return currDx;
+              return function (invaderCount) {
+                  var sign = function (_57) {
+                      if (_57 instanceof Entities_Enemies.Left) {
+                          return -1;
+                      };
+                      if (_57 instanceof Entities_Enemies.Right) {
+                          return 1;
+                      };
+                      throw new Error("Failed pattern match at Handlers.Motion line 63, column 5 - line 64, column 5: " + [ _57.constructor.name ]);
+                  };
+                  var ns = [ 1, 2, 3, 4, 6, 8, 12 ];
+                  var idx = Data_Maybe_Unsafe.fromJust(Data_Array.findLastIndex(function (n) {
+                      return n <= invaderCount;
+                  })(ns));
+                  return Data_Int.toNumber((24 / Data_Maybe_Unsafe.fromJust(Data_Array["!!"](ns)(idx)) | 0) * sign(newDir) | 0);
               };
-              if (Prelude.otherwise) {
-                  return -currDx;
-              };
-              throw new Error("Failed pattern match at Handlers.Motion line 53, column 1 - line 57, column 1: " + [ newDir.constructor.name, currDir.constructor.name, currDx.constructor.name ]);
           };
       };
   };
   var computeDirection = function (currDir) {
       return function (w) {
-          return function (_47) {
-              if (_47.length === 0) {
+          return function (_54) {
+              if (_54.length === 0) {
                   return currDir;
               };
-              var go = function (_48) {
-                  return function (_49) {
-                      if (_48 instanceof Entities_Enemies.Left && _49) {
+              var go = function (_55) {
+                  return function (_56) {
+                      if (_55 instanceof Entities_Enemies.Left && _56) {
                           return Entities_Enemies.Right.value;
                       };
-                      if (_48 instanceof Entities_Enemies.Right && _49) {
+                      if (_55 instanceof Entities_Enemies.Right && _56) {
                           return Entities_Enemies.Left.value;
                       };
-                      return _48;
+                      return _55;
                   };
               };
-              var t = Data_Maybe_Unsafe.fromJust(Data_Array.tail(_47));
-              var h = Data_Maybe_Unsafe.fromJust(Data_Array.head(_47));
+              var t = Data_Maybe_Unsafe.fromJust(Data_Array.tail(_54));
+              var h = Data_Maybe_Unsafe.fromJust(Data_Array.head(_54));
               var maxX = Data_Foldable.foldl(Data_Foldable.foldableArray)(function (a) {
                   return function (i) {
                       return $$Math.max(a)(Optic_Getter["^."](i)(Entities_Invader.x(Data_Const.functorConst)));
@@ -3040,14 +3130,14 @@ var PS = { };
   };
   var movePatrol = function (gRef) {
       return function __do() {
-          var _8 = Control_Monad_ST.readSTRef(gRef)();
+          var _9 = Control_Monad_ST.readSTRef(gRef)();
           return (function () {
-              var w = Optic_Getter["^."](_8)(Entities_Game.w(Data_Const.functorConst));
-              var currInvaders = Optic_Getter["^."](_8)(Entities_Game.invaders(Data_Const.functorConst));
-              var currDx = Optic_Getter["^."](_8)(Entities_Game.patrolDx(Data_Const.functorConst));
-              var currDir = Optic_Getter["^."](_8)(Entities_Game.patrolDirection(Data_Const.functorConst));
+              var w = Optic_Getter["^."](_9)(Entities_Game.w(Data_Const.functorConst));
+              var currInvaders = Optic_Getter["^."](_9)(Entities_Game.invaders(Data_Const.functorConst));
+              var currDx = Optic_Getter["^."](_9)(Entities_Game.patrolDx(Data_Const.functorConst));
+              var currDir = Optic_Getter["^."](_9)(Entities_Game.patrolDirection(Data_Const.functorConst));
               var newDir = computeDirection(currDir)(w)(currInvaders);
-              var newDx = computeDx(newDir)(currDir)(currDx);
+              var newDx = computeDx(newDir)(currDir)(currDx)(Data_Array.length(currInvaders));
               var newDy = computeDy(newDir)(currDir);
               var newInvaders = Prelude.map(Prelude.functorArray)(function (i) {
                   return moveInvader(i)(newDx)(newDy);
@@ -3137,19 +3227,19 @@ var PS = { };
   var renderEnemies = function (ctx) {
       return function (g) {
           return function __do() {
-              var _9 = Data_Date.nowEpochMilliseconds();
+              var _10 = Data_Date.nowEpochMilliseconds();
               return (function () {
                   var shotInvaderSprite = Optic_Getter["^."](g)(Entities_Game.shotInvaderSprite(Data_Const.functorConst));
-                  var secondsIntoGame = Data_Time.toSeconds(Data_Time.timeValueMilliseconds)(Prelude["-"](Data_Time.ringMilliseconds)(_9)(Optic_Getter["^."](g)(Entities_Game.startTime(Data_Const.functorConst))));
+                  var secondsIntoGame = Data_Time.toSeconds(Data_Time.timeValueMilliseconds)(Prelude["-"](Data_Time.ringMilliseconds)(_10)(Optic_Getter["^."](g)(Entities_Game.startTime(Data_Const.functorConst))));
                   var invaders = Optic_Getter["^."](g)(Entities_Game.invaders(Data_Const.functorConst));
                   var invaderSprites = Optic_Getter["^."](g)(Entities_Game.invaderSprites(Data_Const.functorConst));
                   var deadInvaderSprite = Optic_Getter["^."](g)(Entities_Game.deadInvaderSprite(Data_Const.functorConst));
                   var chooseSprite = function (status) {
-                      return function (_50) {
+                      return function (_59) {
                           return function (idx) {
                               if (status instanceof Entities_Invader.Alive) {
                                   var idx$prime = Data_Int.toNumber(idx);
-                                  var spriteIdx = Data_Maybe_Unsafe.fromJust(Data_Int.fromNumber($$Math.floor(idx$prime + _50 * 2.0))) % 2;
+                                  var spriteIdx = Data_Maybe_Unsafe.fromJust(Data_Int.fromNumber($$Math.floor(idx$prime + _59 * 2.0))) % 2;
                                   return Data_Maybe_Unsafe.fromJust(Data_Array["!!"](invaderSprites)(spriteIdx));
                               };
                               if (status instanceof Entities_Invader.Shot) {
@@ -3173,24 +3263,110 @@ var PS = { };
           };
       };
   };
+  var render$prime = function (_58) {
+      return function (gRef) {
+          if (_58 instanceof Entities_Game.Playing) {
+              return function __do() {
+                  var _13 = Graphics_Canvas.getCanvasElementById("canvas")();
+                  if (_13 instanceof Data_Maybe.Just) {
+                      var _12 = Graphics_Canvas.getContext2D(_13.value0)();
+                      var _11 = Control_Monad_ST.readSTRef(gRef)();
+                      Graphics_Canvas.setFillStyle("#000000")(_12)();
+                      Graphics_Canvas.fillRect(_12)({
+                          x: 0.0, 
+                          y: 0.0, 
+                          w: Optic_Getter["^."](_11)(Entities_Game.w(Data_Const.functorConst)), 
+                          h: Optic_Getter["^."](_11)(Entities_Game.h(Data_Const.functorConst))
+                      })();
+                      return Control_Monad_Eff.foreachE([ renderScore, renderLives, renderEnemies, renderPlayer, renderPlayerBullets ])(function (f) {
+                          return f(_12)(_11);
+                      })();
+                  };
+                  throw new Error("Failed pattern match at Handlers.Rendering line 124, column 1 - line 129, column 1: " + [ _13.constructor.name ]);
+              };
+          };
+          if (_58 instanceof Entities_Game.Waiting) {
+              return function __do() {
+                  var _16 = Graphics_Canvas.getCanvasElementById("canvas")();
+                  if (_16 instanceof Data_Maybe.Just) {
+                      var _15 = Graphics_Canvas.getContext2D(_16.value0)();
+                      var _14 = Control_Monad_ST.readSTRef(gRef)();
+                      Graphics_Canvas.setFillStyle("#000000")(_15)();
+                      Graphics_Canvas.fillRect(_15)({
+                          x: 0.0, 
+                          y: 0.0, 
+                          w: Optic_Getter["^."](_14)(Entities_Game.w(Data_Const.functorConst)), 
+                          h: Optic_Getter["^."](_14)(Entities_Game.h(Data_Const.functorConst))
+                      })();
+                      Graphics_Canvas.setFont("40pt Courier")(_15)();
+                      var allText = [ {
+                          color: "#FFFFFF", 
+                          text: "main =", 
+                          x: 50.0, 
+                          y: 200.0
+                      }, {
+                          color: "#FF00FF", 
+                          text: "do", 
+                          x: 275.0, 
+                          y: 200.0
+                      }, {
+                          color: "#FFFFFF", 
+                          text: "spaceInvaders `in`", 
+                          x: 100.0, 
+                          y: 250.0
+                      }, {
+                          color: "#FFFFFF", 
+                          text: "pureScript", 
+                          x: 150.0, 
+                          y: 300.0
+                      }, {
+                          color: "#FFFFFF", 
+                          text: "respondTo", 
+                          x: 50.0, 
+                          y: 400.0
+                      }, {
+                          color: "#CC0000", 
+                          text: "S", 
+                          x: 375.0, 
+                          y: 400.0
+                      }, {
+                          color: "#FFFFFF", 
+                          text: "= startGame", 
+                          x: 435.0, 
+                          y: 400.0
+                      }, {
+                          color: "#FFFFFF", 
+                          text: "respondTo _ =", 
+                          x: 50.0, 
+                          y: 450.0
+                      }, {
+                          color: "#FFFFFF", 
+                          text: "stareAtThisScreen", 
+                          x: 100.0, 
+                          y: 500.0
+                      } ];
+                      Control_Monad_Eff.foreachE(allText)(function (t) {
+                          return function __do() {
+                              Graphics_Canvas.setFillStyle(t.color)(_15)();
+                              Graphics_Canvas.fillText(_15)(t.text)(t.x)(t.y)();
+                              return Prelude["return"](Control_Monad_Eff.applicativeEff)(Prelude.unit)();
+                          };
+                      })();
+                      return Prelude["return"](Control_Monad_Eff.applicativeEff)(Prelude.unit)();
+                  };
+                  throw new Error("Failed pattern match at Handlers.Rendering line 124, column 1 - line 129, column 1: " + [ _16.constructor.name ]);
+              };
+          };
+          throw new Error("Failed pattern match at Handlers.Rendering line 124, column 1 - line 129, column 1: " + [ _58.constructor.name, gRef.constructor.name ]);
+      };
+  };
   var render = function (gRef) {
       return function __do() {
-          var _12 = Graphics_Canvas.getCanvasElementById("canvas")();
-          if (_12 instanceof Data_Maybe.Just) {
-              var _11 = Graphics_Canvas.getContext2D(_12.value0)();
-              var _10 = Control_Monad_ST.readSTRef(gRef)();
-              Graphics_Canvas.setFillStyle("#000000")(_11)();
-              Graphics_Canvas.fillRect(_11)({
-                  x: 0.0, 
-                  y: 0.0, 
-                  w: Optic_Getter["^."](_10)(Entities_Game.w(Data_Const.functorConst)), 
-                  h: Optic_Getter["^."](_10)(Entities_Game.h(Data_Const.functorConst))
-              })();
-              return Control_Monad_Eff.foreachE([ renderScore, renderLives, renderEnemies, renderPlayer, renderPlayerBullets ])(function (f) {
-                  return f(_11)(_10);
-              })();
-          };
-          throw new Error("Failed pattern match at Handlers.Rendering line 124, column 1 - line 128, column 1: " + [ _12.constructor.name ]);
+          var _17 = Control_Monad_ST.readSTRef(gRef)();
+          return (function () {
+              var gameStatus = Optic_Getter["^."](_17)(Entities_Game.status(Data_Const.functorConst));
+              return render$prime(gameStatus)(gRef);
+          })()();
       };
   };
   exports["render"] = render;
@@ -3220,7 +3396,7 @@ var PS = { };
   var Data_Identity = PS["Data.Identity"];     
   var updateInvaderStatus = function (gRef) {
       return function __do() {
-          var _17 = Control_Monad_ST.readSTRef(gRef)();
+          var _0 = Control_Monad_ST.readSTRef(gRef)();
           return (function () {
               var newStatus = function (status) {
                   if (status instanceof Entities_Invader.Shot) {
@@ -3228,7 +3404,7 @@ var PS = { };
                   };
                   return status;
               };
-              var invaders = Optic_Getter["^."](_17)(Entities_Game.invaders(Data_Const.functorConst));
+              var invaders = Optic_Getter["^."](_0)(Entities_Game.invaders(Data_Const.functorConst));
               var remainingInvaders = Data_Array.filter(function (i) {
                   return Prelude["/="](Entities_Invader.eqStatus)(Optic_Getter["^."](i)(Entities_Invader.status(Data_Const.functorConst)))(Entities_Invader.Dead.value);
               })(invaders);
@@ -3243,9 +3419,9 @@ var PS = { };
   };
   var removeOffscreenPlayerBullets = function (gRef) {
       return function __do() {
-          var _18 = Control_Monad_ST.readSTRef(gRef)();
+          var _1 = Control_Monad_ST.readSTRef(gRef)();
           return (function () {
-              var playerBullets = Optic_Getter["^."](_18)(Entities_Game.playerBullets(Data_Const.functorConst));
+              var playerBullets = Optic_Getter["^."](_1)(Entities_Game.playerBullets(Data_Const.functorConst));
               var newPlayerBullets = Data_Array.filter(function (b) {
                   return Optic_Getter["^."](b)(Entities_Bullet.y(Data_Const.functorConst)) > -10.0;
               })(playerBullets);
@@ -3255,14 +3431,34 @@ var PS = { };
           })()();
       };
   };
+  var update$prime = function (_6) {
+      return function (gRef) {
+          if (_6 instanceof Entities_Game.Playing) {
+              return function __do() {
+                  Handlers_Collision.checkInvadersShot(gRef)();
+                  Handlers_Motion.movePlayerBullets(gRef)();
+                  Handlers_Motion.movePatrol(gRef)();
+                  updateInvaderStatus(gRef)();
+                  removeOffscreenPlayerBullets(gRef)();
+                  return Prelude["return"](Control_Monad_Eff.applicativeEff)(Prelude.unit)();
+              };
+          };
+          if (_6 instanceof Entities_Game.Waiting) {
+              return Prelude["return"](Control_Monad_Eff.applicativeEff)(Prelude.unit);
+          };
+          if (_6 instanceof Entities_Game.GameOver) {
+              return Prelude["return"](Control_Monad_Eff.applicativeEff)(Prelude.unit);
+          };
+          throw new Error("Failed pattern match at Update line 43, column 1 - line 51, column 1: " + [ _6.constructor.name, gRef.constructor.name ]);
+      };
+  };
   var update = function (gRef) {
       return function __do() {
-          Handlers_Collision.checkInvadersShot(gRef)();
-          Handlers_Motion.movePlayerBullets(gRef)();
-          Handlers_Motion.movePatrol(gRef)();
-          updateInvaderStatus(gRef)();
-          removeOffscreenPlayerBullets(gRef)();
-          return Prelude["return"](Control_Monad_Eff.applicativeEff)(Prelude.unit)();
+          var _2 = Control_Monad_ST.readSTRef(gRef)();
+          return (function () {
+              var gameStatus = Optic_Getter["^."](_2)(Entities_Game.status(Data_Const.functorConst));
+              return update$prime(gameStatus)(gRef);
+          })()();
       };
   };
   exports["update"] = update;
@@ -3282,6 +3478,8 @@ var PS = { };
   var DOM_Event_Types = PS["DOM.Event.Types"];
   var DOM_HTML = PS["DOM.HTML"];
   var DOM_HTML_Types = PS["DOM.HTML.Types"];
+  var DOM_Node_NonElementParentNode = PS["DOM.Node.NonElementParentNode"];
+  var DOM_Node_Types = PS["DOM.Node.Types"];
   var DOM_Timer = PS["DOM.Timer"];
   var Graphics_Canvas = PS["Graphics.Canvas"];
   var Optic_Core = PS["Optic.Core"];
@@ -3299,12 +3497,12 @@ var PS = { };
       });
   };
   var main = function __do() {
-      var _21 = DOM_HTML.window();
-      var _20 = Entities_Game.makeGame(800.0)(750.0)();
-      var _19 = Control_Monad_ST.newSTRef(_20)();
-      DOM_Event_EventTarget.addEventListener("keydown")(Handlers_Keyboard.onKeydown(_19))(false)(DOM_HTML_Types.windowToEventTarget(_21))();
-      DOM_Timer.interval(50)(Update.update(_19))();
-      return gameLoop(_19)();
+      var _3 = Entities_Game.makeGame(800.0)(750.0)();
+      var _2 = Control_Monad_ST.newSTRef(_3)();
+      var _1 = DOM_HTML.window();
+      DOM_Event_EventTarget.addEventListener("keydown")(Handlers_Keyboard.onKeydown(_2))(false)(DOM_HTML_Types.windowToEventTarget(_1))();
+      DOM_Timer.interval(50)(Update.update(_2))();
+      return gameLoop(_2)();
   };
   exports["main"] = main;
   exports["gameLoop"] = gameLoop;;
