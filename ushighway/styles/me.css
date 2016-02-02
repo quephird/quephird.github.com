@@ -31,6 +31,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Roadgeek2005Arrows2Regular';
+    src: url('./../fonts/roadgeek_2005_arrows_2-webfont.eot');
+    src: url('./../fonts/roadgeek_2005_arrows_2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./../fonts/roadgeek_2005_arrows_2-webfont.woff') format('woff'),
+         url('./../fonts/roadgeek_2005_arrows_2-webfont.ttf') format('truetype'),
+         url('./../fonts/roadgeek_2005_arrows_2-webfont.svg#Roadgeek2005Arrows2Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     width: 100%;
 
@@ -44,7 +55,9 @@ body {
     are not partially obscured by the arrow glyphs.
 */
 img {
-   position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
 }
 
 .sky {
@@ -65,7 +78,7 @@ img {
     background-color: #004000;
     height: 500px;
     left: 0px;
-    min-width: 1100px;
+    /*min-width: 1100px;*/
     position: absolute;
     text-align: center;
     top: 500px;
@@ -133,17 +146,17 @@ img {
 }
 
 .signPost {
-    -moz-border-radius: 50px;
     background-color: transparent;
     border-color: silver;
     border-radius: 50px;
+    -moz-border-radius: 50px;
     border-style: solid;
     border-width: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: 100px;
-    width: 1000px;
+    left: 50%;
+    margin-left: -600px;
+    position: absolute;
+    top: 400px;
+    width: 1200px;
 
     /* This is to extend the bottom of the div beyond the end of the page */
     height: 1500px;
@@ -152,24 +165,58 @@ img {
 .signGroup {
     display: block;
     margin: 0 auto;
-    position: relative;
+    position: absolute;
     text-align: center;
-    top: 200px;
-    width: 1000px;
+    top: 150px;
+    width: 100%;
     z-index: 2;
 }
 
 .sign {
+    display: inline-block;
+    /*text-align: center;*/
+    width: auto;
+}
+
+.mainPanel {
     -moz-border-radius: 15px;
     background-color: green;
     border-color: white;
     border-radius: 15px;
     border-style: solid;
     border-width: 5px;
-    display: inline-block;
+    font-family: 'Roadgeek2005SeriesEMRegular';
     margin:0 10px 10px 0;
     top: -50px;
-    width: 250px;
+}
+
+.exitNumber {
+  -moz-border-radius: 15px;
+  background-color: green;
+  border-color: white;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  color: white;
+  font-family: 'Roadgeek2005SeriesEMRegular';
+  font-size: 24pt;
+  width: 150px;
+}
+
+.routes {
+  display: block;
+  margin: 20px 0px 20px 0px;
+  vertical-align: middle;
+}
+
+.direction {
+  color: white;
+  display: inline-block;
+  font-size: 20pt;
+  vertical-align: middle;
+}
+.direction:first-letter { 
+   font-size:140%;
 }
 
 .signIcon {
@@ -178,16 +225,36 @@ img {
 
 .signText {
     color: white;
-    font-family: 'Roadgeek2005SeriesEMRegular';
     font-size: 24pt;
+    margin: 5px 50px 5px 50px;
     text-decoration: none;
 }
 
-.exitArrow {
-    color: white;
-    font-family: 'Roadgeek2005Arrows1Regular';
-    font-size: 72pt;
-    margin-top: -50px;
+.leftExitText {
+  background-color: orange;
+  color: black;
+  display: inline;
+  font-size: 20pt;
+  text-decoration: none;
+  width: auto;
+}
+
+.exitOnlyBottom {
+  background-color: orange;
+  border-radius: 0px 0px 10px 10px;
+  color: black;
+  font-size: 20pt;
+  height: 50px;
+  vertical-align: middle;
+  width: auto;
+}
+
+.arrow {
+    display: inline-block;
+    font-family: 'Roadgeek2005Arrows2Regular';
+    font-size: 96pt;
+    margin-top: -75px;
     margin-bottom: 10px;
+    transform: translate(0px, 80px) rotate(180deg) ;
 }
 
