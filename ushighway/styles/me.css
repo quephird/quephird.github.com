@@ -61,6 +61,10 @@ img {
   position: relative;
 }
 
+a { 
+  text-decoration: none;
+}
+
 .sky {
     /* Mozilla Firefox */ 
     background-image: -moz-linear-gradient(top, #00A3EF 0%, #ff4500 100%);
