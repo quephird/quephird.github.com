@@ -44,6 +44,7 @@
 
 body {
     width: 100%;
+    display: block;
 
     /* This is to prevent the vertical scrollbar from appearing to expose
        the bottom of the signPost div. */
@@ -162,20 +163,35 @@ img {
     height: 1500px;
 }
 
+.signContent {
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
 .signGroup {
-    display: block;
-    margin: 0 auto;
-    position: absolute;
-    text-align: center;
-    top: 150px;
-    width: 100%;
     z-index: 2;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-end; 
 }
 
 .sign {
-    display: inline-block;
-    /*text-align: center;*/
     width: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.sign.signAlignedLeft {
+  align-items: flex-start;   
+}
+
+.sign.signAlignedRight {
+  align-items: flex-end;   
 }
 
 .mainPanel {
