@@ -210,9 +210,12 @@ a {
     top: -50px;
 }
 
-.exitPanel {  
+.panel {
+  background-color: green;    
+}
+
+.exitPanel {
   -moz-border-radius: 15px;
-  background-color: green;
   border-color: white;
   border-radius: 15px;
   border-style: solid;
