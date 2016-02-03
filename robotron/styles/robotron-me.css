@@ -203,6 +203,19 @@ body {
     text-align: center;
 }
 
+.icon {
+  width: 132px;
+  height: 120px;
+}
+
+@-webkit-keyframes flashLinkedIn {
+  0% { background-image: url(../images/linkedIn.png);}
+  89% { background-image: url(../images/linkedIn.png);}
+  90% { background-image: url(../images/linkedInFlash.png);}  
+  99% { background-image: url(../images/linkedInFlash.png);}  
+  100% { background-image: url(../images/linkedIn.png);}
+}
+
 @-webkit-keyframes moveLinkedIn1 {
     0% { -webkit-transform: translateX(0px) translateY(0px); }
     30%   { -webkit-transform: translateX(1000px) translateY(0px); }
@@ -221,8 +234,18 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
-    -webkit-animation: moveLinkedIn1 10s linear infinite;
+    -webkit-animation: moveLinkedIn1 10s linear infinite,
+                       flashLinkedIn 0.5s linear infinite;
     -moz-animation: moveLinkedIn1 10s linear infinite;
+}
+
+@-webkit-keyframes flashTwitter {
+  0% { background-image: url(../images/twitter.png);}
+  69% { background-image: url(../images/twitter.png);}
+  70% { background-image: url(../images/twitterFlash.png);}
+  79% { background-image: url(../images/twitterFlash.png);}
+  80% { background-image: url(../images/twitter.png);}
+  100% { background-image: url(../images/twitter.png);}
 }
 
 @-webkit-keyframes moveTwitter1 {
@@ -245,8 +268,18 @@ body {
     left: 150px;
     position: absolute;
     top: 0px;
-    -webkit-animation: moveTwitter1 10s linear infinite;
+    -webkit-animation: moveTwitter1 10s linear infinite,
+                       flashTwitter 0.5s linear infinite;
     -moz-animation: moveTwitter1 10s linear infinite;
+}
+
+@-webkit-keyframes flashDeviantArt {
+  0% { background-image: url(../images/deviantArt.png);}
+  49% { background-image: url(../images/deviantArt.png);}
+  50% { background-image: url(../images/deviantArtFlash.png);}
+  59% { background-image: url(../images/deviantArtFlash.png);}
+  60% { background-image: url(../images/deviantArt.png);}
+  100% { background-image: url(../images/deviantArt.png);}
 }
 
 @-webkit-keyframes moveDeviantArt1 {
@@ -269,8 +302,18 @@ body {
     left: 300px;
     position: absolute;
     top: 0px;
-    -webkit-animation: moveDeviantArt1 10s linear infinite;
+    -webkit-animation: moveDeviantArt1 10s linear infinite,
+                       flashDeviantArt 0.5s linear infinite;
     -moz-animation: moveDeviantArt1 10s linear infinite;
+}
+
+@-webkit-keyframes flashSoundcloud {
+  0% { background-image: url(../images/soundcloud.png);}
+  29% { background-image: url(../images/soundcloud.png);}
+  30% { background-image: url(../images/soundcloudFlash.png);}
+  39% { background-image: url(../images/soundcloudFlash.png);}
+  40% { background-image: url(../images/soundcloud.png);}
+  100% { background-image: url(../images/soundcloud.png);}
 }
 
 @-webkit-keyframes moveSoundCloud1 {
@@ -293,8 +336,18 @@ body {
     left: 450px;
     position: absolute;
     top: 0px;
-    -webkit-animation: moveSoundCloud1 10s linear infinite;
+    -webkit-animation: moveSoundCloud1 10s linear infinite,
+                       flashSoundcloud 0.5s linear infinite;
     -moz-animation: moveSoundCloud1 10s linear infinite;
+}
+
+@-webkit-keyframes flashGithub {
+  0% { background-image: url(../images/github.png);}
+  9% { background-image: url(../images/github.png);}
+  10% { background-image: url(../images/githubFlash.png);}
+  19% { background-image: url(../images/githubFlash.png);}
+  20% { background-image: url(../images/github.png);}
+  100% { background-image: url(../images/github.png);}
 }
 
 @-webkit-keyframes moveGithub1 {
@@ -317,7 +370,8 @@ body {
     left: 600px;
     position: absolute;
     top: 0px;
-    -webkit-animation: moveGithub1 10s linear infinite;
+    -webkit-animation: moveGithub1 10s linear infinite,
+                       flashGithub 0.5s linear infinite;
     -moz-animation: moveGithub1 10s linear infinite;
 }
 
@@ -341,7 +395,8 @@ body {
     left: 750px;
     position: absolute;
     top: 0px;
-    -webkit-animation: moveLinkedIn2 10s linear infinite;
+    -webkit-animation: moveLinkedIn2 10s linear infinite,
+                       flashLinkedIn 0.5s linear infinite;
     -moz-animation: moveLinkedIn2 10s linear infinite;
 }
 
@@ -363,7 +418,8 @@ body {
     left: 900px;
     position: absolute;
     top: 0px;
-    -webkit-animation: moveTwitter2 10s linear infinite;
+    -webkit-animation: moveTwitter2 10s linear infinite,
+                       flashTwitter 0.5s linear infinite;
     -moz-animation: moveTwitter2 10s linear infinite;
 }
 
@@ -387,7 +443,8 @@ body {
     left: 1000px;
     position: absolute;
     top: 50px;
-    -webkit-animation: moveDeviantArt2 10s linear infinite;
+    -webkit-animation: moveDeviantArt2 10s linear infinite,
+                       flashDeviantArt 0.5s linear infinite;
     -moz-animation: moveDeviantArt2 10s linear infinite;
 }
 
@@ -411,7 +468,8 @@ body {
     left: 1000px;
     position: absolute;
     top: 200px;
-    -webkit-animation: moveSoundCloud2 10s linear infinite;
+    -webkit-animation: moveSoundCloud2 10s linear infinite,
+                       flashSoundcloud 0.5s linear infinite;
     -moz-animation: moveSoundCloud2 10s linear infinite;
 }
 
@@ -435,7 +493,8 @@ body {
     left: 1000px;
     position: absolute;
     top: 350px;
-    -webkit-animation: moveGithub2 10s linear infinite;
+    -webkit-animation: moveGithub2 10s linear infinite,
+                       flashGithub 0.5s linear infinite;
     -moz-animation: moveGithub2 10s linear infinite;
 }
 
@@ -457,7 +516,8 @@ body {
     left: 1000px;
     position: absolute;
     top: 500px;
-    -webkit-animation: moveLinkedIn3 10s linear infinite;
+    -webkit-animation: moveLinkedIn3 10s linear infinite,
+                       flashLinkedIn 0.5s linear infinite;
     -moz-animation: moveLinkedIn3 10s linear infinite;
 }
 
@@ -479,7 +539,8 @@ body {
     left: 850px;
     position: absolute;
     top: 600px;
-    -webkit-animation: moveTwitter3 10s linear infinite;
+    -webkit-animation: moveTwitter3 10s linear infinite,
+                       flashTwitter 0.5s linear infinite;
     -moz-animation: moveTwitter3 10s linear infinite;
 }
 
@@ -503,7 +564,8 @@ body {
     left: 700px;
     position: absolute;
     top: 600px;
-    -webkit-animation: moveDeviantArt3 10s linear infinite;
+    -webkit-animation: moveDeviantArt3 10s linear infinite,
+                       flashDeviantArt 0.5s linear infinite;
     -moz-animation: moveDeviantArt3 10s linear infinite;
 }
 
@@ -527,7 +589,8 @@ body {
     left: 550px;
     position: absolute;
     top: 600px;
-    -webkit-animation: moveSoundCloud3 10s linear infinite;
+    -webkit-animation: moveSoundCloud3 10s linear infinite,
+                       flashSoundcloud 0.5s linear infinite;
     -moz-animation: moveSoundCloud3 10s linear infinite;
 }
 
@@ -551,7 +614,8 @@ body {
     left: 400px;
     position: absolute;
     top: 600px;
-    -webkit-animation: moveGithub3 10s linear infinite;
+    -webkit-animation: moveGithub3 10s linear infinite,
+                       flashGithub 0.5s linear infinite;
     -moz-animation: moveGithub3 10s linear infinite;
 }
 
@@ -575,7 +639,8 @@ body {
     left: 250px;
     position: absolute;
     top: 600px;
-    -webkit-animation: moveLinkedIn4 10s linear infinite;
+    -webkit-animation: moveLinkedIn4 10s linear infinite,
+                       flashLinkedIn 0.5s linear infinite;
     -moz-animation: moveLinkedIn4 10s linear infinite;
 }
 
@@ -597,7 +662,8 @@ body {
     left: 100px;
     position: absolute;
     top: 600px;
-    -webkit-animation: moveTwitter4 10s linear infinite;
+    -webkit-animation: moveTwitter4 10s linear infinite,
+                       flashTwitter 0.5s linear infinite;
     -moz-animation: moveTwitter4 10s linear infinite;
 }
 
@@ -619,7 +685,8 @@ body {
     left: 0px;
     position: absolute;
     top: 450px;
-    -webkit-animation: moveDeviantArt4 10s linear infinite;
+    -webkit-animation: moveDeviantArt4 10s linear infinite,
+                       flashDeviantArt 0.5s linear infinite;
     -moz-animation: moveDeviantArt4 10s linear infinite;
 }
 
@@ -641,7 +708,8 @@ body {
     left: 0px;
     position: absolute;
     top: 300px;
-    -webkit-animation: moveSoundCloud4 10s linear infinite;
+    -webkit-animation: moveSoundCloud4 10s linear infinite,
+                       flashSoundcloud 0.5s linear infinite;
     -moz-animation: moveSoundCloud4 10s linear infinite;
 }
 
@@ -663,7 +731,8 @@ body {
     left: 0px;
     position: absolute;
     top: 150px;
-    -webkit-animation: moveGithub4 10s linear infinite;
+    -webkit-animation: moveGithub4 10s linear infinite,
+                       flashGithub 0.5s linear infinite;
     -moz-animation: moveGithub4 10s linear infinite;
 }
 
