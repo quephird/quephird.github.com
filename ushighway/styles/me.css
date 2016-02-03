@@ -188,6 +188,7 @@ a {
     text-align: center;
     display: flex;
     flex-direction: column;
+    margin:0 10px 0px 10px;
 }
 
 .sign.signAlignedLeft {
@@ -206,11 +207,10 @@ a {
     border-style: solid;
     border-width: 5px;
     font-family: 'Roadgeek2005SeriesEMRegular';
-    margin:0 10px 10px 0;
     top: -50px;
 }
 
-.exitNumber {
+.exitPanel {  
   -moz-border-radius: 15px;
   background-color: green;
   border-color: white;
@@ -218,9 +218,20 @@ a {
   border-style: solid;
   border-width: 5px;
   color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline; 
   font-family: 'Roadgeek2005SeriesEMRegular';
-  font-size: 24pt;
-  width: 150px;
+  padding: 0px 20px 0px 20px;
+  /*width: 150px;*/
+}
+
+.exitPanelText {
+  font-size: 20pt;
+}
+
+.exitPanelNumber {
+  font-size: 28pt;
 }
 
 .routes {
