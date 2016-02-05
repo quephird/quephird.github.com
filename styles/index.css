@@ -1,39 +1,42 @@
 body {
-    background-color: #000000;
+  background-color: #000000;
+  color: #777777;
+  font-family: Monaco;
+  font-size: large;
 }
 
-.themeList {
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -200px 0 0 -200px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%
 }
 
-.theme {
-    margin: 50px;
-    text-align: center;
-}
-
-.whoami {
-    color: #ff7f00;
-    font-family: Courier;
-    font-size: x-large;
+.bio {
     font-weight: bold;
-    text-align: center;
+    white-space: pre;
+    width: 600px;
+}
+
+.def {
+  color: #00bb00;
+}
+
+.string {
+  color: #bb7f00;
+}
+
+.name {
+  color: #00bfff;
+}
+
+.keyword {
+  color: #7700ff;
 }
 
 a {
-    font-family: Courier;
-    font-size: x-large;
-    font-weight: bold;
-}
-
-a:link {    
-    color: #ff7f00;
-}
-
-a:visited {    
-    color: #964b00;
+  color: #bb7f00;
+  font-family: monaco;
+  font-size: large;
+  font-weight: bold;
 }
