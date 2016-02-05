@@ -1,6 +1,9 @@
 body {
   background-color: #000000;
-  color: #777777;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
+              url("./../images/nail_polish.png");
+  background-position: center; 
+  color: #aaaaaa;
   font-family: Monaco;
   font-size: large;
 }
@@ -15,7 +18,7 @@ body {
 .bio {
     font-weight: bold;
     white-space: pre;
-    width: 600px;
+    width: auto;
 }
 
 .def {
@@ -31,7 +34,7 @@ body {
 }
 
 .keyword {
-  color: #7700ff;
+  color: #aa00ff;
 }
 
 a {
