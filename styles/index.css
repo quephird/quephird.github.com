@@ -3,7 +3,10 @@ and (min-device-width : 414px)
 and (max-device-width : 736px)
 and (orientation : portrait) {
   body {
-    font-size: x-large;
+    font-size: 48pt;
+  }
+  a {
+    font-size: 48pt;
   }
 }
 
