@@ -4,7 +4,7 @@ and (min-device-width : 414px)
 and (max-device-width : 736px)
 and (orientation : portrait) {
   html {
-    zoom: 150%;
+    zoom: 140%;
   }
 }
 /* iPad portrait only */
