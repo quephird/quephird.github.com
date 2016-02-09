@@ -1,3 +1,20 @@
+/* iPhone 6+ only */
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) {
+  html {
+    zoom: 75%;
+  }
+}
+/* iPad only */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+  html {
+    zoom: 85%;
+  }
+}
+
 @font-face {
     font-family: 'Robotron-2084';
     src: url('./../fonts/robotron_2084.eot');

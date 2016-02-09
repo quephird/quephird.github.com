@@ -1,9 +1,19 @@
+/* iPhone 6+ portrait only */
 @media only screen 
 and (min-device-width : 414px) 
 and (max-device-width : 736px)
 and (orientation : portrait) {
   html {
-    zoom: 50%;
+    zoom: 150%;
+  }
+}
+/* iPad portrait only */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+  html {
+    zoom: 150%;
   }
 }
 
