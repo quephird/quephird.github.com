@@ -24,10 +24,10 @@
     0% {
         background-image: none;
     }
-    16% {
+    8% {
         background-image: none;
     }
-    17% {
+    9% {
         background-image: url('./../images/star-tile.jpg');
         background-repeat: repeat-x repeat-y;
     }
@@ -38,7 +38,7 @@
 }
 
 body {
-    -webkit-animation: starField 45s linear infinite;
+    -webkit-animation: starField 60s linear infinite;
     width: 100%;
     background-color: black;
     overflow-x: hidden;
@@ -51,10 +51,10 @@ body {
     0% {
         color: cyan;
     }
-    16% {
+    7% {
         color: cyan;
     }
-    17% {
+    8% {
         color: black;
     }
     100% {
@@ -63,7 +63,7 @@ body {
 }
 
 .longAgo {
-    -webkit-animation: introShowAndDisappear 45s linear infinite;
+    -webkit-animation: introShowAndDisappear 60s linear infinite;
     font-family: 'SWCrawlBody';
     font-size: 24pt;
     width: 600px;
@@ -106,8 +106,8 @@ body {
 }
 
 .me {
-    -webkit-animation: zoomOut 45s linear infinite;
-    -webkit-animation-delay: 7.5s;
+    -webkit-animation: zoomOut 60s linear infinite;
+    -webkit-animation-delay: 5s;
     color: black;
     font-family: 'StarJediHollow';
     line-height: 0.8;
@@ -119,10 +119,10 @@ body {
 
 @-webkit-keyframes crawl {
     0% {
-        -webkit-transform: perspective(500px) rotateX(45deg) translateY(1000px);
+        -webkit-transform: perspective(500px) rotateX(45deg) translateY(800px);
     }
-    33% {
-        -webkit-transform: perspective(500px) rotateX(45deg) translateY(1000px);
+    25% {
+        -webkit-transform: perspective(500px) rotateX(45deg) translateY(800px);
     }
     100% {
         -webkit-transform: perspective(500px) rotateX(45deg) translateY(-2000px);
@@ -130,8 +130,8 @@ body {
 }
 
 .crawlText {
-    -webkit-animation: crawl 45s linear infinite;
-    -webkit-transform: perspective(500px) rotateX(45deg) translateY(1000px);
+    -webkit-animation: crawl 60s linear infinite;
+    -webkit-transform: perspective(500px) rotateX(45deg) translateY(800px);
     font-family: 'SWCrawlBody';
     color: orange;
     font-size: 24pt;
