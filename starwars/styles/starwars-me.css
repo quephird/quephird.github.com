@@ -38,7 +38,7 @@
 }
 
 body {
-    -webkit-animation: starField 30s linear infinite;
+    -webkit-animation: starField 45s linear infinite;
     width: 100%;
     background-color: black;
     overflow-x: hidden;
@@ -63,7 +63,7 @@ body {
 }
 
 .longAgo {
-    -webkit-animation: introShowAndDisappear 30s linear infinite;
+    -webkit-animation: introShowAndDisappear 45s linear infinite;
     font-family: 'SWCrawlBody';
     font-size: 24pt;
     width: 600px;
@@ -106,8 +106,8 @@ body {
 }
 
 .me {
-    -webkit-animation: zoomOut 30s linear infinite;
-    -webkit-animation-delay: 5s;
+    -webkit-animation: zoomOut 45s linear infinite;
+    -webkit-animation-delay: 7.5s;
     color: black;
     font-family: 'StarJediHollow';
     line-height: 0.8;
@@ -130,7 +130,7 @@ body {
 }
 
 .crawlText {
-    -webkit-animation: crawl 30s linear infinite;
+    -webkit-animation: crawl 45s linear infinite;
     -webkit-transform: perspective(500px) rotateX(45deg) translateY(1000px);
     font-family: 'SWCrawlBody';
     color: orange;
