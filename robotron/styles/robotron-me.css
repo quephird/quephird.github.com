@@ -225,6 +225,13 @@ body {
   height: 120px;
 }
 
+@keyframes flashLinkedIn {
+    0% { background-image: url(../images/linkedIn.png);}
+    89% { background-image: url(../images/linkedIn.png);}
+    90% { background-image: url(../images/linkedInFlash.png);}  
+    99% { background-image: url(../images/linkedInFlash.png);}  
+    100% { background-image: url(../images/linkedIn.png);}
+  }
 @-webkit-keyframes flashLinkedIn {
   0% { background-image: url(../images/linkedIn.png);}
   89% { background-image: url(../images/linkedIn.png);}
@@ -232,7 +239,13 @@ body {
   99% { background-image: url(../images/linkedInFlash.png);}  
   100% { background-image: url(../images/linkedIn.png);}
 }
-
+@keyframes moveLinkedIn1 {
+    0% { transform: translateX(0px) translateY(0px); }
+    30%   { transform: translateX(1000px) translateY(0px); }
+    50%   { transform: translateX(1000px) translateY(600px); }
+    80%   { transform: translateX(0px) translateY(600px); }
+    100% { transform: translateX(0px) translateY(0px); }
+}
 @-webkit-keyframes moveLinkedIn1 {
     0% { -webkit-transform: translateX(0px) translateY(0px); }
     30%   { -webkit-transform: translateX(1000px) translateY(0px); }
@@ -251,20 +264,38 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
+    animation: moveLinkedIn1 10s linear infinite,
+               flashLinkedIn 0.5s linear infinite;
     -webkit-animation: moveLinkedIn1 10s linear infinite,
                        flashLinkedIn 0.5s linear infinite;
-    -moz-animation: moveLinkedIn1 10s linear infinite;
+    -moz-animation: moveLinkedIn1 10s linear infinite,
+                    flashLinkedIn 0.5s linear infinite;
 }
 
+@keyframes flashTwitter {
+    0% { background-image: url(../images/twitter.png);}
+    69% { background-image: url(../images/twitter.png);}
+    70% { background-image: url(../images/twitterFlash.png);}
+    79% { background-image: url(../images/twitterFlash.png);}
+    80% { background-image: url(../images/twitter.png);}
+    100% { background-image: url(../images/twitter.png);}
+}
 @-webkit-keyframes flashTwitter {
-  0% { background-image: url(../images/twitter.png);}
-  69% { background-image: url(../images/twitter.png);}
-  70% { background-image: url(../images/twitterFlash.png);}
-  79% { background-image: url(../images/twitterFlash.png);}
-  80% { background-image: url(../images/twitter.png);}
-  100% { background-image: url(../images/twitter.png);}
+    0% { background-image: url(../images/twitter.png);}
+    69% { background-image: url(../images/twitter.png);}
+    70% { background-image: url(../images/twitterFlash.png);}
+    79% { background-image: url(../images/twitterFlash.png);}
+    80% { background-image: url(../images/twitter.png);}
+    100% { background-image: url(../images/twitter.png);}
 }
-
+@keyframes moveTwitter1 {
+    0% { transform: translateX(15px) translateY(0px); }
+    25%   { transform: translateX(850px) translateY(0px); }
+    45%   { transform: translateX(850px) translateY(600px); }
+    75%   { transform: translateX(-150px) translateY(600px); }
+    95%   { transform: translateX(-150px) translateY(0px); }
+    100% { transform: translateX(15px) translateY(0px); }
+}
 @-webkit-keyframes moveTwitter1 {
     0% { -webkit-transform: translateX(15px) translateY(0px); }
     25%   { -webkit-transform: translateX(850px) translateY(0px); }
@@ -285,9 +316,12 @@ body {
     left: 150px;
     position: absolute;
     top: 0px;
+    animation: moveTwitter1 10s linear infinite,
+               flashTwitter 0.5s linear infinite;
     -webkit-animation: moveTwitter1 10s linear infinite,
                        flashTwitter 0.5s linear infinite;
-    -moz-animation: moveTwitter1 10s linear infinite;
+    -moz-animation: moveTwitter1 10s linear infinite,
+                    flashTwitter 0.5s linear infinite;
 }
 
 @-webkit-keyframes flashDeviantArt {
